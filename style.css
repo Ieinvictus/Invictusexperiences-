@@ -1062,7 +1062,7 @@ overflow-x:hidden;
 
 gap:clamp(10px,2vw,16px);
 
-padding-bottom:30px;
+padding-bottom:60px;
 }
 
 .tour-box-container{
@@ -1146,7 +1146,7 @@ margin:0 auto;
 padding:clamp(40px,6vw,90px) clamp(16px,3vw,40px);
 
 background:#f7f5f0;
-
+overflow: hidden;
 box-sizing:border-box;
 }
 
