@@ -409,7 +409,9 @@ MOBILE
   background-size: cover;
   background-position: 50% 25%;
   background-repeat: no-repeat;
-
+will-change: transform;
+  transform: translateZ(0);   /* 🔥 Chrome fix */
+  backface-visibility: hidden;
   height: clamp(400px, 50vh, 600px);
 
 }
