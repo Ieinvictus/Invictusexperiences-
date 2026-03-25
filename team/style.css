@@ -473,9 +473,8 @@ font-size:18px;
 }
 
 .bg-2{
-background-image:url("https://invictusexperiences.com/team/assets/team-cf-keshav.jpg");
+  background-image: url("https://invictusexperiences.com/assets/team-cf-keshav.jpg");
 }
-
 /* Overlay */
 .overlay-page{
   position:absolute;
