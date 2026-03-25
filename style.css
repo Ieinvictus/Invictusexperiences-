@@ -2318,10 +2318,11 @@ DEFAULT FOOTER TEXT
 
 .footer p,
 .footer li,
+.footer-about,
 .footer a,
 .subscribe-text{
 
-font-size:clamp(14px,1.8vw,16px)!important;
+font-size:clamp(12px,1.8vw,16px)!important;
 
 line-height:1.6;
 
