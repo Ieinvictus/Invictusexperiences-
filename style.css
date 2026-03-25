@@ -17,7 +17,7 @@ html {
 body,
 html {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   overflow-x: hidden;
   background: #f7f5f0;
 
