@@ -2608,10 +2608,11 @@ gap:8px;
 padding:6px 0;
 
 color:#fff;
+  font-size: clamp(12px, 1.8vw, 16px);
 
 text-decoration:none;
 
-font-weight:500;
+font-weight:400;
 
 transition:.35s ease;
 }
@@ -2760,16 +2761,18 @@ flex-direction:column;
 width:100%;
 }
 
-.footer-links{
 
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    text-align: center;
+    width: 100%;
 
-grid-template-columns:repeat(1fr);
-gap:28px;
-text-align:center;
-width:100%;
-
-box-sizing:border-box;
-}
+    box-sizing: border-box;
+  }
+  .footer-links a {
+    word-break: break-all;
+  }
 
 .footer-links h4::after{
 
