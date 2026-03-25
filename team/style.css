@@ -462,8 +462,7 @@ font-size:18px;
   content:"";
   position:absolute;
   inset:0;
-  background:inherit;
-  filter:grayscale(100%);
+  background: rgba(0,0,0,0.45); /* simple overlay */
   z-index:0;
 }
 
