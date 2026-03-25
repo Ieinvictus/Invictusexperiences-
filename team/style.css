@@ -447,7 +447,6 @@ font-size:18px;
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-  filter: grayscale(100%); /* 🔥 main grayscale */
   background-attachment: fixed;
 }
 @media (min-width:768px) and (max-width:1050px){
@@ -463,8 +462,8 @@ font-size:18px;
   content:"";
   position:absolute;
   inset:0;
-  background: rgba(0,0,0,0.10); /* 🔥 same feel */
-  z-index:0;
+  background: rgba(0,0,0,0.4); /* dark tone */
+  backdrop-filter: grayscale(100%); /* 🔥 grayscale here */
 }
 
 /* Background Images */
@@ -482,7 +481,7 @@ font-size:18px;
   display:flex;
   align-items:flex-end;
   justify-content:center;
-  background:none;  /* only dark overlay */
+  background: visible;  /* only dark overlay */
   z-index:1;  /* above grey layer */
   backdrop-filter:none;
 }
