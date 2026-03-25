@@ -400,42 +400,42 @@ MOBILE
   }
 }
 
-.conflict-banner{
+
+/* ================================
+   CONFLICT BANNER (EXACT STYLE)
+================================ */
+
+.conflict-banner {
   width: 100%;
   position: relative;
   overflow: hidden;
 
-  background-image:url("https://invictusexperiences.com/events/tour-img/haridwar-gangariver.webp");
+  background-image: url("https://invictusexperiences.com/Slider/rj.jpg");
   background-size: cover;
   background-position: 50% 25%;
   background-repeat: no-repeat;
-will-change: transform;
-  transform: translateZ(0);   /* 🔥 Chrome fix */
-  backface-visibility: hidden;
-  height: clamp(400px, 50vh, 600px);
 
+  height: clamp(400px, 50vh, 600px);
 }
 
-@media (min-width:1600px){
-
-.conflict-banner{
-height:600px;
+@media (min-width: 1600px) {
+  .conflict-banner {
+    height: 600px;
   }
+}
+.page-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  /* site max width */
 
-  }
-.page-wrap{
-  width:100%;
-  display:flex;
-  align-items:center;     /* vertical center */
-  justify-content:center; /* horizontal center */
-         /* site max width */
-  
-  padding-top:auto;  
-  box-sizing:border-box;
+  padding-top: auto;
+  box-sizing: border-box;
 }
 /* DARK → TRANSPARENT BLEND */
-.conflict-overlay{
-position: absolute;
+.conflict-overlay {
+  position: absolute;
   inset: 0;
 
   background: linear-gradient(
@@ -450,288 +450,136 @@ position: absolute;
 }
 
 /* TEXT CONTENT */
-.conflict-content{
- position:relative;
-  z-index:2;
-transform:translateY(-50%); /* 🔥 perfect center */
-  top:30%;
-  margin:clamp(20px, 5vw, 80px);
-  max-width:650px;
-  padding:clamp(40px, 6vw, 80px) 0 0 clamp(20px, 6vw, 80px);
+.conflict-content {
+  position: relative;
+  z-index: 2;
+  transform: translateY(-50%); /* 🔥 perfect center */
+  top: 30%;
+  margin: clamp(20px, 5vw, 80px);
+  max-width: 650px;
+  padding: clamp(40px, 6vw, 80px) 0 0 clamp(20px, 6vw, 80px);
 
-  color:#fff;
+  color: #fff;
 }
 
 /* HEADING */
-.conflict-content h1{
-  font-size:clamp(20px, 3.5vw, 38px);
-  font-weight:800;
-  line-height:1.1;
-  margin-bottom:18px;
+.conflict-content h1 {
+  font-size: clamp(20px, 3.5vw, 38px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 18px;
 }
 
-.conflict-content h1 span{
-  color:#ff4d6d;
+.conflict-content h1 span {
+  color: #ff4d6d;
 }
 
 /* PARAGRAPH */
-.conflict-content p{
- font-size:clamp(14px, 1.6vw, 16px); /* 🔥 fixed */
-  line-height:1.6;
-  opacity:0.9;
-  max-width:600px;
+.conflict-content p {
+  font-size: clamp(14px, 1.6vw, 16px); /* 🔥 fixed */
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 600px;
 }
 
 /* ================================
    TABLET
 ================================ */
-@media (max-width:1050px){
+@media (max-width: 1050px) {
+  .conflict-banner {
+    height: clamp(400px, 50vh, 600px);
+  }
 
-.conflict-banner{
-  height:clamp(400px, 50vh, 600px);
-}
-
-.conflict-content{
-  margin-left:clamp(16px, 5vw, 48px);
-}
-
+  .conflict-content {
+    margin-left: clamp(16px, 5vw, 48px);
+  }
 }
 /* ================================
    MOBILE
 ================================ */
-@media (max-width:768px){
-
-/* =========================
+@media (max-width: 768px) {
+  /* =========================
 BANNER
 ========================= */
 
-.conflict-banner{
-  position:relative;
-  width:100%;
-  overflow:hidden;
+  .conflict-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 
-  height:100dvh; /* 🔥 full screen */
+    height: 100dvh; /* 🔥 full screen */
 
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-  display:flex;
-  align-items:flex-start; /* 🔥 TOP align */
-  justify-content:center;
-}
+    display: flex;
+    align-items: flex-start; /* 🔥 TOP align */
+    justify-content: center;
+  }
 
-
-/* =========================
+  /* =========================
 OVERLAY (TOP FADE)
 ========================= */
 
-.conflict-overlay{
-  position:absolute;
-  inset:0;
-  z-index:1;
+  .conflict-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
 
-  background:linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.85) 0%,
-    rgba(0,0,0,0.6) 20%,
-    rgba(0,0,0,0.3) 60%,
-    rgba(0,0,0,0.0) 100%
-  );
-}
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.6) 20%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
 
-
-/* =========================
+  /* =========================
 CONTENT (CENTER)
 ========================= */
 
-.conflict-content{
- position:relative;
-  z-index:2;
+  .conflict-content {
+    position: relative;
+    z-index: 2;
 
-  width:100%;
-  max-width:90%;
+    width: 100%;
+    max-width: 90%;
 
-  padding-top:80px;   /* 🔥 top spacing */
-  padding-left:20px;
-  padding-right:20px;
+    padding-top: 80px; /* 🔥 top spacing */
+    padding-left: 20px;
+    padding-right: 20px;
 
-  text-align:center;
-  margin:0 auto;
-}
+    text-align: center;
+    margin: 0 auto;
+  }
 
-
-/* =========================
+  /* =========================
 HEADING
 ========================= */
 
-.conflict-content h1{
-  font-size:clamp(20px, 5vw, 26px);
-  line-height:1.2;
-  font-weight:700;
-  margin-bottom:12px;
-}
+  .conflict-content h1 {
+    font-size: clamp(20px, 5vw, 26px);
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
 
-.conflict-content h1 span{
-  color:#ff4d6d;
-}
+  .conflict-content h1 span {
+    color: #ff4d6d;
+  }
 
-
-/* =========================
+  /* =========================
 PARAGRAPH
 ========================= */
 
-.conflict-content p{
-  font-size:14px;
-  line-height:1.6;
-  opacity:0.9;
-}
-
-}
-
-
-
-/* ================================
-   HERITAGE BANNER
-================================ */
-.heritage-banner{
-  width:100%;
-  box-sizing: border-box;
-  height:450px;
-  display:none;
-  overflow: hidden;
-  position:relative;
-  /* ONLY BOTTOM CURVE */
-  border-radius:0 0 32px 32px;
-  
-  overflow:hidden;
-
-  background-image:url("https://1drv.ms/i/c/8bd057f5b83ff802/IQTTXRkjQPZgSamqGUWNrqhsAUR84zPodt2JWUJo_qZr7u0?width=1024");
-  background-size:cover;
-  background-position:center;
-  align-items:center;
-  justify-content:center;
-  margin-top:60px;
-  margin-bottom:0;  /* 🔥 */
-}
-
-/* DARK + WARM FILTER */
-.heritage-overlay{
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,0,0,0.45),
-      rgba(0,0,0,0.35)
-    );
-  backdrop-filter: brightness(1.1) saturate(1.1);
-}
-
-/* CONTENT */
-.heritage-content{
-  position:relative;
-  text-align:center;
-  color:#fff;
-  max-width:800px;
-  padding:0 24px;
-}
-
-/* HEADINGS */
-.heritage-content h1{
-  font-size:clamp(36px,5vw,54px);
-  font-weight:800;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing:1px;
-  margin-bottom:6px;
-  background:linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #e6e6e6 45%,
-    #cfcfcf 100%
-  );
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
- text-shadow:0 22px 55px rgba(0,0,0,0.65);
-
-}
-
-.heritage-content h2{
-  font-size:clamp(18px,2.5vw,26px);
-  font-weight:500;
-  opacity:0.9;
-  font-family: 'Open Sans', sans-serif;
-  margin-bottom:16px;
-  background:linear-gradient(
-    135deg,
-    #f5f5f5,
-    #cfcfcf,
-    #ffffff
-  );
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-
-  text-shadow:0 14px 35px rgba(0,0,0,0.55);
-}
-
-/* DESCRIPTION */
-.heritage-content p{
-  font-size:clamp(14px,1.6vw,18px);
-  line-height:1.6;
-  opacity:0.85;
-  font-family: 'Bebas Neue', sans-serif;
-}
-
-/* ================================
-   TABLET (768px – 1050px)
-   SAME SIZE – 400px HEIGHT
-================================ */
-@media (max-width:1050px){
-  .heritage-banner{
-    height:400px;
-   /* ONLY BOTTOM CURVE */
-  border-radius:0 0 32px 32px;
-    margin:auto;
+  .conflict-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.9;
   }
 }
-
-/* ================================
-   MOBILE (<768px)
-   VERTICAL + AUTO HEIGHT
-================================ */
-@media (max-width:768px){
-  .heritage-banner{
-    height:700px;
-    /* ONLY BOTTOM CURVE */
-  border-radius:0 0 16px 16px;
-margin:auto;
-  
-    display: none;
-
-  align-items:center;
-
-  justify-content:center;
-  }
-
-  .heritage-content{
-   padding:auto;
-
-  }
-
-  .heritage-content h1{
-    font-size:32px;
-  }
-
-  .heritage-content h2{
-    font-size:18px;
-  }
-
-  .heritage-content p{
-    font-size:14px;
-  }
-}
-
-
 
 
 /* =====================================
