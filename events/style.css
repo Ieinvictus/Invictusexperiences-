@@ -61,7 +61,7 @@ TYPOGRAPHY AUTO SCALE
 ========================= */
 
 p {
-  font-size: clamp(14px, 1.8vw, 16px);
+  font-size: clamp(12px, 1.8vw, 16px);
   line-height: 1.6;
   font-weight: 400 !important;
 }
@@ -1185,7 +1185,7 @@ DEFAULT FOOTER TEXT
 .footer a,
 .footer-about p,
 .subscribe-text {
-  font-size: clamp(14px, 1.8vw, 16px);
+  font-size: clamp(12px, 1.8vw, 16px);
 
   line-height: 1.6;
 
