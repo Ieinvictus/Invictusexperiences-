@@ -1245,7 +1245,7 @@ margin-bottom:clamp(8px,1.5vw,14px);
 
 .rover-h1{
 
-font-family:'Poppins',sans-serif;
+font-family:'DM Serif Display',sans-serif;
 
 font-size: clamp(15px, 2.5vw, 22px);
 
@@ -1259,9 +1259,10 @@ margin-bottom:clamp(12px,2vw,18px);
 
 background: linear-gradient(
   90deg,
-#0e7c49,
-#18B56A,
-#37e08e
+#9c7a52 0%,
+    #b18e63 35%,
+    #c6a47a 60%,
+    #d9be97 100%
 );
 
 -webkit-background-clip:text;
@@ -1272,7 +1273,7 @@ background: linear-gradient(
 
 .rover-h2{
 
-font-family:'Inter',sans-serif;
+font-family:'DM Serif Display',sans-serif;
 
 font-size:clamp(16px,2.2vw,22px);
 
