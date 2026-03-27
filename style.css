@@ -714,7 +714,7 @@ transform:rotate(360deg);
 @media (max-width:768px){
 
 .purple-slide{
-height:100vh;
+height:85vh;
     min-height:500px;
     max-height:700px;
 }
