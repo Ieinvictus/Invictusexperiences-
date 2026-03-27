@@ -714,7 +714,7 @@ transform:rotate(360deg);
 @media (max-width:768px){
 
 .purple-slide{
-height:85vh;
+height:100vh;
     min-height:500px;
     max-height:700px;
 }
@@ -756,7 +756,7 @@ overflow: hidden;
 
 .purple-secondary-text-box{
 position:absolute;
-top:45%;
+top:47%;
   transform:none; /* 👈 fine tuning */
 left:20px;
 right:20px;
