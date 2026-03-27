@@ -59,15 +59,6 @@ margin:0 auto;
 }
 
 }
-@media (max-width:767px){
-
-.page-scale{
-  zoom:1;          /* 🔥 reset to default */
-  width:100%;      /* remove 118% */
-  margin:0 auto;
-  }
-
-}
 
 /* =========================
 TYPOGRAPHY AUTO SCALE
