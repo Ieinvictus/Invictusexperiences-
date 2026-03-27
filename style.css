@@ -724,18 +724,17 @@ height:720px;
 @media (max-width:768px){
 
 .purple-slide{
-height:auto;
-  overflow: hidden;
-  min-height:100vh;
+height:85vh;
+    min-height:500px;
+    max-height:700px;
 }
 
 /* MAIN TEXT */
 
 .purple-slide-text-box{
 
-top:25%;
+top:30%;
 left:20px;
-  overflow: hidden;
 transform:none;
 max-width:90%;
 }
@@ -767,9 +766,8 @@ overflow: hidden;
 
 .purple-secondary-text-box{
 position:absolute;
-top:45%;
+top:60%;
   transform:none; /* 👈 fine tuning */
-  overflow: hidden;
 left:20px;
 right:20px;
 gap:15px;
