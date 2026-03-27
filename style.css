@@ -723,7 +723,7 @@ height:100vh;
 
 .purple-slide-text-box{
 
-top:25%;
+top:20%;
 left:20px;
 transform:none;
 max-width:90%;
@@ -756,7 +756,7 @@ overflow: hidden;
 
 .purple-secondary-text-box{
 position:absolute;
-top:55%;
+top:45%;
   transform:none; /* 👈 fine tuning */
 left:20px;
 right:20px;
