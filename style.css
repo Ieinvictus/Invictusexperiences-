@@ -881,7 +881,7 @@ background:#000;
 
 cursor:pointer;
 
-border:1px solid rgba(255,255,255,.08);
+border: 1.5px solid rgba(139, 106, 43, 0.35); /* HERITAGE BORDER */
 
 box-shadow:0 15px 40px rgba(0,0,0,.35);
 
