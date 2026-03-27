@@ -710,17 +710,7 @@ transform:rotate(360deg);
 }
 
 
-/* ===============================
-LARGE SCREEN
-================================ */
 
-@media (min-width:1400px){
-
-.purple-slide{
-height:720px;
-}
-
-}
 @media (max-width:768px){
 
 .purple-slide{
@@ -733,7 +723,7 @@ height:100vh;
 
 .purple-slide-text-box{
 
-top:30%;
+top:25%;
 left:20px;
 transform:none;
 max-width:90%;
@@ -766,7 +756,7 @@ overflow: hidden;
 
 .purple-secondary-text-box{
 position:absolute;
-top:60%;
+top:55%;
   transform:none; /* 👈 fine tuning */
 left:20px;
 right:20px;
