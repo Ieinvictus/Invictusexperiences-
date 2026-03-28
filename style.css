@@ -88,7 +88,8 @@ NAVBAR
   top: 0;
   width: 100%;
   z-index: 10000;
-
+margin: 0;
+  padding: 0;
   background: linear-gradient(90deg, #0b0c0f, #1b1f26, #323844, #1a1d23);
 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
