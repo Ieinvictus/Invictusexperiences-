@@ -482,23 +482,18 @@ document.querySelectorAll(".review-text-wrap").forEach(function(wrap){
 });
 
 // js load nv page
-document.querySelectorAll(".nav-menu a, .mobile-nav-list a").forEach(link => {
+// nav bar//
+const rmBarMenuBtn = document.getElementById("rmBarMenuBtn");
+const rmBarCurtainMenu = document.getElementById("rmBarCurtainMenu");
 
-  link.addEventListener("click", function(e){
+rmBarMenuBtn.addEventListener("click", () => {
+  rmBarMenuBtn.classList.toggle("active");
+  rmBarCurtainMenu.classList.toggle("active");
+});
 
-    const href = this.getAttribute("href");
-
-    // dropdown ne ignore
-    if (this.classList.contains("dropdown-toggle")) return;
-
-    // empty links ignore
-    if (!href || href === "#") return;
-
-    // 🔥 IMPORTANT: navigation allow karo
-    // NO preventDefault here
-
-    window.location.href = href;
-
+document.querySelectorAll(".rm-bar-menu-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    rmBarMenuBtn.classList.remove("active");
+    rmBarCurtainMenu.classList.remove("active");
   });
-
 });
