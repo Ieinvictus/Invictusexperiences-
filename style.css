@@ -28,9 +28,6 @@ width: 100%;
 -ms-user-select: none;
 user-select: none;
 -webkit-touch-callout: none; /* iOS long press disable */
-/* Disable image dragging */
--webkit-user-drag: none;
-user-drag: none;
   font-family: "Inter", "Poppins", sans-serif;
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem)!important;
   font-weight: 400!important;
