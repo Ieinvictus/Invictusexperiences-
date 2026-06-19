@@ -40,7 +40,7 @@ user-drag: none;
   top: 0;
   left: 0;
   width: 100%;
-  display:none;
+  display: visible;
   height: 100%;
   background: #000;
   color: #fff;
