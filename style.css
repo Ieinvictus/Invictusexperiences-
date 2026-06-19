@@ -17,14 +17,10 @@ html {
 
 body,
 html {
-  width: 100%;
+width: 100%;
+  min-,height:100vh;
   overflow-x: hidden;
   background: #f7f5f0;
-  font-family: "Inter", "Poppins", sans-serif;
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  font-weight: 400;
-  line-height: 1.8;
-  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   color: #2b2b2b;
   /* Disable text selection */
@@ -32,8 +28,14 @@ html {
 -ms-user-select: none;
 user-select: none;
 -webkit-touch-callout: none; /* iOS long press disable */
+/* Disable image dragging */
 -webkit-user-drag: none;
 user-drag: none;
+  font-family: "Inter", "Poppins", sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem)!important;
+  font-weight: 400!important;
+  line-height: 1.8!important;
+  letter-spacing: 0.01em!important;
 }
 #maintenance {
   position: fixed;
@@ -82,6 +84,7 @@ p {
   font-weight: 400;
   line-height: 1.8;
   letter-spacing: 0.01em;
+  color:#2b2b2b;
 }
 
 
@@ -2353,13 +2356,9 @@ DEFAULT FOOTER TEXT
 .footer li,
 .footer a,
 .subscribe-text {
-font-size: clamp(12px, 1.8vw, 16px);
-
-line-height: 1.6;
+font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
 
 color: #fff;
-
-font-weight: 400 !important;
 }
 
 /* ===============================
