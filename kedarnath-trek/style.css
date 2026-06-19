@@ -3086,13 +3086,7 @@ DEFAULT FOOTER TEXT
 .footer li,
 .footer a,
 .subscribe-text {
-font-size: clamp(12px, 1.8vw, 16px);
-
-line-height: 1.6;
-
-color: #fff;
-
-font-weight: 400 !important;
+color:#fff;
 }
 
 /* ===============================
@@ -3198,7 +3192,7 @@ margin-top: 6px;
 SOCIAL ICONS
 ================================ */
 .social-title {
-font-size: 0.9rem;
+font-size: 1rem;
 font-weight: 600;
 letter-spacing: -0.5px;
 margin-bottom: 10px;
