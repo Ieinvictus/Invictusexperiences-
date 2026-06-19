@@ -853,7 +853,6 @@ MAIN TOUR CARD
 .tour-box{
 
 position:relative;
-pointer-events: none;
 width:100%;
 aspect-ratio:3 / 4;
 
