@@ -4,30 +4,29 @@ document.addEventListener("DOMContentLoaded", () => {
 PAGE SCALE SYSTEM
 ================================================== */
 
-function adjustPageScale(){
+// footer
+document.addEventListener("DOMContentLoaded", () => {
+  /* ==================================================
+PAGE SCALE SYSTEM
+================================================== */
 
-const page = document.querySelector(".page-scale");
-if(!page) return;
+  function adjustPageScale() {
+    const page = document.querySelector(".page-scale");
+    if (!page) return;
 
-const w = window.innerWidth;
+    const w = window.innerWidth;
 
-if(w >= 768 && w <= 1050){
+    if (w >= 768 && w <= 1050) {
+      page.style.zoom = "0.85";
+      page.style.width = "118%";
+    } else {
+      page.style.zoom = "1";
+      page.style.width = "100%";
+    }
+  }
 
-page.style.zoom = "0.85";
-page.style.width = "118%";
-
-}else{
-
-page.style.zoom = "1";
-page.style.width = "100%";
-
-}
-
-}
-
-window.addEventListener("resize", adjustPageScale);
-adjustPageScale();
-
+  window.addEventListener("resize", adjustPageScale);
+  adjustPageScale();
 
 /* ==================================================
 SLIDER ELEMENTS
