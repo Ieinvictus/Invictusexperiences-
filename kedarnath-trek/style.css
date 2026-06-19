@@ -3096,6 +3096,7 @@ color:#fff;
   line-height: 1.8!important;
   letter-spacing: 0.01rem!important;
   white-space:normal;
+  word-break:break-word;
 }
 
 /* ===============================
