@@ -1062,7 +1062,6 @@ LINK
 display:block;
 text-decoration:none;
 color:inherit;
-  pointer-events: none;
 }
 
 /* ===============================
