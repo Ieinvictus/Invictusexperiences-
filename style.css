@@ -718,7 +718,7 @@ font-size:16px;
 border-radius:12px;
 overflow: hidden;
 letter-spacing:1.2px;
-
+margin-bottom:20px;
 backdrop-filter:blur(10px);
 
 }
@@ -733,7 +733,7 @@ box-shadow:0 14px 32px rgba(198,164,122,.45);
 .purple-secondary-text-box{
   position:absolute;
 box-sizing:border-box;
-    bottom: clamp(60px, 12vh, 120px); /* 🔥 MAIN FIX */
+    bottom:40px; /* 🔥 MAIN FIX */
    padding:0 20px;
 width:100%;
 left:0;
@@ -751,7 +751,7 @@ left:0;
   .purple-info-description{
     font-size:13px;
     line-height:1.6;
-    margin-top:6px;
+    margin-top:20px;
     max-width:100%;
   }
 /* INFO ITEMS /
