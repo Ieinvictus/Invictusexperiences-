@@ -3091,9 +3091,9 @@ DEFAULT FOOTER TEXT
 .subscribe-text {
 color:#fff;
   font-family: "Inter", "Poppins", sans-serif;
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem)!important;
+  font-size:1rem!important;
   font-weight: 400!important;
-  line-height: 1.8;
+  line-height: 1.8!important;
   letter-spacing: 0.01rem!important;
   white-space:normal;
 }
