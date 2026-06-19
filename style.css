@@ -2624,556 +2624,707 @@ padding:clamp(20px,5vw,26px);
 
 
 
-/* ===============================
-FOOTER BASE
-================================ */
+/* =========================================
+PREMIUM FOOTER - INVICTUS EXPERIENCES
+FULL RESPONSIVE CSS
+PC + TABLET + MOBILE
+========================================= */
 
 
-/* ===============================
-FOOTER BASE
-================================ */
+.footer{
+width:100%;
+position:relative;
+overflow:hidden;
 
-.footer {
-width: 100%;
-padding: clamp(30px, 5vw, 60px) clamp(16px, 4vw, 40px);
-box-sizing: border-box;
-background: linear-gradient(
-    135deg,
-    rgba(11, 12, 15, 1),
-    rgba(27, 31, 38, 1),
-    rgba(50, 56, 68, 1),
-    rgba(26, 29, 35, 1)
+background:linear-gradient(
+135deg,
+#0B0C0F,
+#1B1F26,
+#323844,
+#1A1D23
 );
 
-color: #ffffff;
+padding:10px 20px;
 
-position: relative;
+color:#fff;
 }
 
-/* ===============================
-DEFAULT FOOTER TEXT
-================================ */
+.footer::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+
+width:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,235,59,.9),
+transparent
+);
+}
+
+/* =========================================
+TYPOGRAPHY
+========================================= */
+
+.footer h4{
+font-family:"Poppins",sans-serif;
+font-size:1rem;
+font-weight:600;
+
+letter-spacing:1px;
+text-transform:uppercase;
+
+margin-bottom:20px;
+color:#fff;
+}
+
+.footer h4::after{
+content:"";
+
+display:block;
+
+width:42px;
+height:2px;
+
+margin-top:8px;
+
+background:#ffeb3b;
+border-radius:20px;
+}
 
 .footer p,
-.footer-about p,
-.footer li,
 .footer a,
-.subscribe-text {
-color:#fff;
-  font-family: "Inter", "Poppins", sans-serif;
-  font-size:1rem!important;
-  font-weight: 400!important;
-  line-height: 1.8!important;
-  letter-spacing: 0.01rem!important;
-  white-space:normal;
-  word-break:break-word;
+.footer li,
+.subscribe-text{
+font-family:"Inter","Segoe UI",sans-serif;
+
+font-size:1rem;
+font-weight:400;
+
+line-height:1.8;
+
+color:rgba(255,255,255,.88);
 }
 
-/* ===============================
+/* =========================================
 TOP ROW
-================================ */
+========================================= */
 
-.footer-top-row {
-max-width: 1400px;
-margin: auto;
+.footer-top-row{
+max-width:1400px;
+width:100%;
+padding:0;
+margin:0 auto;
+display:grid;
+grid-template-columns:300px 1fr;
 
-display: grid;
-grid-template-columns: auto 1fr 1fr;
+gap:30px;
 
+align-items:center;
 
-  gap: clamp(20px, 3vw, 40px);
-padding: clamp(6px, 1.5vw, 12px) 0;  /* 🔥 pehla karta ochu */
-
-align-items: flex-start;
 }
 
-/* ===============================
+/* =========================================
 LOGO
-================================ */
+========================================= */
 
-.footer-top-logo {
-display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-margin-right: clamp(12px, 2vw, 20px);  /* smooth spacing */
-max-height: 250px;   /* limit */
-overflow: hidden;    /* extra space cut */
-
+.footer-top-logo{
+display:flex;
+justify-content:flex-start;
+align-items:flex-start;
 }
 
-.footer-logo {
-width: 250px;  /* 🔥 pehla karta nano */
-
-height: auto;
-
-display: block;
+.footer-logo{
+width:100%;
+max-width:280px;
 }
 
-.footer-logo img {
-width: 100%;
-height: 100%;
-object-fit: contain; /* image stretch nai thay */
+.footer-logo img{
+width:100%;
+display:block;
+height:220px;
+object-fit:cover;
 }
 
-/* ===============================
+/* =========================================
 ABOUT
-================================ */
+========================================= */
 
-.footer-about {
-max-width: 520px;
-padding-left: clamp(8px, 1.5vw, 15px);
-gap: clamp(4px, 0.8vw, 8px);  /* 🔥 vertical spacing ochu */
+.footer-about{
+width:100%;
 }
 
-/* ===============================
-HEADINGS
-================================ */
+/* =========================================
+SUBSCRIBE
+========================================= */
 
-.footer-about h4,
-.footer-links h4,
-.footer-about-subscribe h4 {
-font-size:1rem!important;
-  font-weight: 600;
-  line-height: 1.4;
-  color: #fff;
-font-family: "Poppins", sans-serif;
-letter-spacing: 1px;
 
-text-transform:;
+/* =========================================
+MAIN SECTION
+========================================= */
 
-margin-bottom: 1rem;
+.footer-main{
+max-width:100%;
 
-position: relative;
+margin:50px auto 0;
+
+padding-top:50px;
+
+border-top:1px solid rgba(255,255,255,.08);
 }
 
-.footer-about h4::after,
-.footer-links h4::after,
-.footer-about-subscribe h4::after {
-content: "";
 
-width: 38px;
+/* =========================================
+FOOTER COLUMN LINKS
+========================================= */
 
-height: 2px;
-
-background: #ffeb3b;
-
-display: block;
-
-margin-top: 6px;
+.footer-links ul{
+list-style:none;
+padding:0;
+margin:0;
 }
 
-.footer-social-section {
-  max-width: 1400px;
-  margin: clamp(30px, 5vw, 60px) auto 0;
+.footer-links li{
+margin-bottom:14px;
+}
 
-  text-align: center;
+.footer-links a{
+position:relative;
+
+display:inline-flex;
+align-items:center;
+
+text-decoration:none;
+
+color:rgba(255,255,255,.82);
+
+font-family:"Inter",sans-serif;
+font-size:1rem;
+font-weight:400;
+
+transition:all .35s ease;
 }
-/* ===============================
-SOCIAL ICONS
-================================ */
-.social-title {
-font-size: 1rem;
-font-weight: 600;
-letter-spacing: -0.5px;
-margin-bottom: 10px;
-text-align:center;   /* 🔥 main fix */
-color: #ffffff;
+
+/* Arrow */
+
+.footer-links a::before{
+content:"→";
+
+margin-right:8px;
+
+opacity:0;
+
+transform:translateX(-8px);
+
+color:#ffeb3b;
+
+transition:all .35s ease;
 }
-.footer-social {
-display: flex;
+
+/* Underline Animation */
+
+.footer-links a::after{
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-4px;
+
+width:0;
+height:1px;
+
+background:#ffeb3b;
+
+transition:.35s ease;
+}
+
+/* Hover */
+
+.footer-links a:hover{
+color:#ffeb3b;
+
+transform:translateX(6px);
+}
+
+.footer-links a:hover::before{
+opacity:1;
+transform:translateX(0);
+}
+
+.footer-links a:hover::after{
+width:100%;
+}
+/* =========================================
+SUBSCRIBE + SOCIAL
+========================================= */
+
+.footer-connect-row{
+width:100%;
+max-width:1100px;
+
+margin:50px auto 0;
+
+display:grid;
+grid-template-columns:1fr 1fr;
+
+gap:50px;
+
+align-items:start;
+justify-items:center;
+}
+
+.footer-subscribe-box,
+.footer-social-box{
+width:100%;
+max-width:450px;
+
+text-align:center;
+}
+
+.footer-subscribe-box h4::after,
+.footer-social-box h4::after{
+margin-left:auto;
+margin-right:auto;
+}
+
+/* =========================================
+SUBSCRIBE
+========================================= */
+
+.footer-subscribe{
+display:flex;
+flex-direction:column;
+
+gap:12px;
+
+margin-top:18px;
+}
+
+.footer-subscribe input{
+width:100%;
+
+padding:14px 18px;
+
+border-radius:12px;
+
+border:1px solid rgba(255,255,255,.12);
+
+background:rgba(255,255,255,.05);
+
+color:#fff;
+
+outline:none;
+}
+
+/* =========================================
+PREMIUM SUBSCRIBE BUTTON
+========================================= */
+
+.footer-subscribe button{
+position:relative;
+
+display:inline-flex;
+align-items:center;
 justify-content:center;
-align-items: center;
-flex-wrap: nowrap;
 
-gap: clamp(12px, 2vw, 20px);
-margin-top: clamp(8px, 1.5vw, 16px);
+padding:14px 34px;
+
+border-radius:60px;
+
+background:rgba(255,255,255,.02);
+
+border:1.5px solid rgba(255,235,59,.45);
+
+color:#ffeb3b;
+
+font-family:"Poppins",sans-serif;
+font-size:.95rem;
+font-weight:600;
+letter-spacing:.5px;
+
+cursor:pointer;
+
+overflow:hidden;
+
+backdrop-filter:blur(10px);
+
+transition:all .4s ease;
 }
 
-.footer-social a {
-width: clamp(3rem, 5vw, 4.5rem);   /* 🔥 responsive box */
-height: clamp(3rem, 5vw, 4.5rem);
-text-decoration: none;
+/* Glow Border */
 
-border-radius: 16px;
+.footer-subscribe button::before{
+content:"";
 
-background: rgba(255, 255, 255, 0.08);
-backdrop-filter: blur(10px);
+position:absolute;
+inset:0;
 
-display: flex;
-justify-content: center;
-align-items: center;
-flex: 0 0 auto;   /* 🔥 ek line maintain */
+border-radius:60px;
 
-font-size: clamp(1.3rem, 2vw, 1.6rem);
-color: #fff;
+padding:1px;
 
-transition: all 0.35s ease;
-position: relative;
+background:linear-gradient(
+90deg,
+rgba(255,235,59,.2),
+rgba(255,235,59,.9),
+rgba(255,235,59,.2)
+);
 
-border: 1px solid rgba(255,255,255,0.1);
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+mask-composite:exclude;
+
+opacity:.8;
 }
 
-.footer-social a:hover {
-transform: translateY(-6px) scale(1.1);
+/* Shine Effect */
 
-background: linear-gradient(135deg, #ffeb3b, #ffd700);
-color: #000;
+.footer-subscribe button::after{
+content:"";
+
+position:absolute;
+top:0;
+left:-120%;
+
+width:60%;
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+
+transform:skewX(-25deg);
+
+transition:.8s;
+}
+
+.footer-subscribe button:hover::after{
+left:150%;
+}
+
+.footer-subscribe button:hover{
+background:#ffeb3b;
+
+color:#111;
+
+transform:translateY(-4px);
 
 box-shadow:
-0 10px 25px rgba(255, 235, 59, 0.35),
-0 0 20px rgba(255, 235, 59, 0.25);
+0 12px 30px rgba(255,235,59,.25),
+0 0 20px rgba(255,235,59,.15);
 }
 
-/* SUBTLE GLOW (NO BACKGROUND) */
-.footer-social a::after {
-content: "";
-position: absolute;
-inset: -6px;
-border-radius: 50%;
+.footer-subscribe button:active{
+transform:translateY(-1px);
 
-opacity: 0;
-background: radial-gradient(
-circle,
-rgba(255, 235, 59, 0.25),
-transparent 70%
-);
-transition: 0.35s ease;
+
 }
 
-.footer-social a:hover::after {
-opacity: 1;
-}
-.footer-social a.facebook:hover {
-background: #1877f2;
-color: #fff;
-}
+/* =========================================
+SOCIAL
+========================================= */
 
-.footer-social a.youtube:hover {
-background: #ff0000;
-color: #fff;
-}
+.footer-social{
+margin-top:20px;
 
-.footer-social a.instagram:hover {
-background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf);
-color: #fff;
+display:flex;
+justify-content:center;
+align-items:center;
+
+gap:15px;
+
+flex-wrap:wrap;
 }
 
-.footer-social a.linkedin:hover {
-background: #0a66c2;
-color: #fff;
+.footer-social a{
+width:58px;
+height:58px;
+text-decoration:none;
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+font-size:1.4rem;
+
+color:#fff;
+
+transition:.35s ease;
+}
+.footer-social .instagram:hover{
+color:#E4405F;
+box-shadow:0 0 20px rgba(228,64,95,.35);
 }
 
-.footer-social a.twitter:hover {
-background: #000;
-color: #fff;
-}
-.footer-social a.whatsapp:hover {
-  background: #25D366;  /* WhatsApp green */
-  color: #fff;
+.footer-social .facebook:hover{
+color:#1877F2;
+box-shadow:0 0 20px rgba(24,119,242,.35);
 }
 
-.footer-social a.telegram:hover {
-  background: #0088cc;  /* Telegram blue */
-  color: #fff;
-}
-/* ===============================
-SUBSCRIBE
-================================ */
-
-.footer-subscribe {
-display: flex;
-
-gap: 10px;
-
-margin-top: 12px;
-
-flex-wrap: wrap;
+.footer-social .youtube:hover{
+color:#FF0000;
+box-shadow:0 0 20px rgba(255,0,0,.35);
 }
 
-.footer-subscribe input {
-flex: 1;
-
-min-width: 180px;
-
-padding: 10px 14px;
-
-border-radius: 6px;
-
-border: 1px solid #444;
-
-background: #111;
-
-color: #fff;
-
-font-size: 14px;
-
-outline: none;
-
-transition: 0.3s;
+.footer-social .linkedin:hover{
+color:#0A66C2;
+box-shadow:0 0 20px rgba(10,102,194,.35);
 }
 
-.footer-subscribe input::placeholder {
-color: #aaa;
+.footer-social .telegram:hover{
+color:#229ED9;
+box-shadow:0 0 20px rgba(34,158,217,.35);
 }
 
-.footer-subscribe input:focus {
-border-color: #d4af37;
+.footer-social .whatsapp:hover{
+color:#25D366;
+box-shadow:0 0 20px rgba(37,211,102,.35);
 
-box-shadow: 0 0 0 1px #d4af37;
 }
 
-.footer-subscribe button {
-padding: 10px 18px;
-
-border: none;
-
-border-radius: 6px;
-
-background: #d4af37;
-
-color: #000;
-
-font-weight: 600;
-
-cursor: pointer;
-
-transition: 0.3s;
-}
-
-.footer-subscribe button:hover {
-background: #c79f2f;
-}
-
-.subscribe-message {
-width: 100%;
-
-margin-top: 6px;
-
-font-size: 13px;
-}
-
-/* ===============================
-LINKS SECTION
-================================ */
-
-.footer-main {
-max-width: 100%;
-margin:0 auto;  /* 🔥 correct */
-  padding-bottom:0;
-  padding:20px 0;
-
-  max-width:1400px;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:2rem;
-}
-
-.footer-links {
-display: grid;
-
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-gap: clamp(20px, 3vw, 40px);
-}
-
-.footer-links ul {
-list-style: none;
-
-padding: 0;
-
-margin: 0;
-}
-
-/* LINK STYLE */
-
-.footer-links a {
-position: relative;
-
-display: inline-flex;
-
-align-items: center;
-
-gap: 8px;
-padding: 6px 0;
-
-color: #fff;
-
-text-decoration: none;
-font-family: "Inter", "Poppins", sans-serif;
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  font-weight: 400;
-  line-height: 1.8;
-  letter-spacing: 0.01em;
-
-transition: 0.35s ease;
-}
-
-.footer-links a::before {
-content: "➜";
-
-font-size: 12px;
-
-color: #ffeb3b;
-
-opacity: 0;
-
-transform: translateX(-8px);
-
-transition: 0.35s ease;
-}
-
-.footer-links a::after {
-content: "";
-
-position: absolute;
-
-left: 0;
-
-bottom: -4px;
-
-width: 0;
-
-height: 2px;
-
-background: linear-gradient(90deg, #ffeb3b, #fff176);
-
-transition: 0.35s ease;
-}
-
-.footer-links a:hover {
-color: #ffeb3b;
-
-padding-left: 12px;
-}
-
-.footer-links a:hover::before {
-opacity: 1;
-
-transform: translateX(0);
-}
-
-.footer-links a:hover::after {
-width: 100%;
-}
-
-/* ===============================
-FOOTER BOTTOM
-================================ */
-
-.footer-bottom {
-margin-top: clamp(20px, 3vw, 40px);
-
-padding-top: clamp(10px, 2vw, 16px);
-
-border-top: 1px solid rgba(255, 255, 255, 0.35);
-
-text-align: center;
-  font-family: "Inter", "Poppins", sans-serif;
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  font-weight: 400;
-  line-height: 1.8;
-  letter-spacing: 0.01em;
-
-color: #ffeb3b;
-}
-
-.footer-bottom a {
-color: #fff;
-font-weight: 600;
-font-family: "Inter", "Poppins", sans-serif;
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  font-weight: 400;
-  line-height: 1.8;
-  letter-spacing: 0.01em;
-text-decoration: none;
-}
-
-
-@media (max-width: 1024px) {
-  .footer-links {
-    grid-template-columns: repeat(2, minmax(2, 1fr));
-  }
-}
-
-/* ===============================
+/* =========================================
 MOBILE
-================================ */
+========================================= */
 
-@media (max-width: 768px) {
-.footer {
-padding: 0 16px;
-margin: 0 auto;
-box-sizing: border-box;
+@media(max-width:768px){
+
+.footer-connect-row{
+grid-template-columns:1fr;
+gap:35px;
 }
 
-.footer-top-row {
-grid-template-columns: 1fr;
-text-align: center;
-gap: 16px;
-padding: 0 16px;
+.footer-subscribe-box,
+.footer-social-box{
+max-width:100%;
 }
 
-.footer-top-logo {
-justify-self: center;
-  margin: 0;
-    padding: 0;
-
-    max-height: none;   /* 🔥 important */
 }
-.footer-logo {
-    width: clamp(100px, 40vw, 160px);  /* 🔥 nano */
-    height: auto;
+.footer-links{
+width:100%;
+
+padding:0 ;
+
+display:grid;
+
+grid-template-columns:
+repeat(4,minmax(0,1fr));
+
+gap:40px;
+
+align-items:start;
+justify-items:center;
+
+text-align:center;
+}
+
+.footer-links > div{
+width:100%;
+max-width:260px;
+}
+
+.footer-links ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.footer-links li{
+margin-bottom:12px;
+}
+
+.footer-links a{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+text-decoration:none;
+
+color:rgba(255,255,255,.85);
+
+transition:.35s ease;
   }
-.footer-social {
-display: grid;  /* 🔥 flex → grid */
 
-  grid-template-columns: repeat(3, 1fr);  /* 3 columns */
-  gap: clamp(12px, 4vw, 20px);
+/* =========================================
+SOCIAL
+========================================= */
 
-  justify-items: center;  /* center icons */
-  align-items: center;
 
-  overflow: hidden; /* scroll remove */
+
+/* =========================================
+BOTTOM
+========================================= */
+
+.footer-bottom{
+max-width:1400px;
+
+margin:45px auto 0;
+
+padding-top:25px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+font-size:.95rem;
+
+line-height:1.8;
+
+color:rgba(255,255,255,.7);
 }
 
-.footer-social a {
-
-  
+.footer-bottom a{
+color:#ffeb3b;
+text-decoration:none;
 }
 
-.footer-subscribe {
-flex-direction: column;
-margin-bottom: 20px;
+/* =========================================
+TABLET
+========================================= */
+
+@media screen and (max-width:1024px){
+
+.footer{
+padding:70px 30px 35px;
 }
 
-.footer-subscribe input,
-.footer-subscribe button {
-width: 100%;
-}
+.footer-top-row{
+max-width:1400px;
+width:100%;
 
-.footer-links {
-grid-template-columns: repeat(2, 1fr);
-gap: 20px;
-text-align: center;
-width: 100%;
 margin:0 auto;
-box-sizing: border-box;
+
+display:grid;
+grid-template-columns:220px 1fr;
+
+gap:35px;
+
+align-items:center;
+}
+
+.footer-links{
+grid-template-columns:
+repeat(4,1fr);
+
+gap:25px;
+}
 
 }
-.footer-links a {
-word-break: break-all;
-  align-items:left;
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media screen and (max-width:768px){
+
+.footer{
+padding:50px 20px 30px;
 }
 
-.footer-links h4::after {
-margin-left: auto;
-margin-right: auto;
+.footer-top-row{
+grid-template-columns:1fr;
+
+gap:35px;
+
+text-align:center;
+}
+
+.footer-top-logo{
+justify-content:center;
+}
+
+.footer-logo{
+max-width:170px;
+margin:auto;
+}
+
+.footer h4::after{
+margin-left:auto;
+margin-right:auto;
+}
+
+.footer-subscribe button{
+width:100%;
+}
+
+.footer-links{
+grid-template-columns:1fr;
+
+text-align:center;
+
+gap:30px;
+}
+
+.footer-links a{
+justify-content:center;
+}
+
+.footer-social{
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:14px;
+}
+
+.footer-social a{
+margin:auto;
+}
 
 }
- 
-.footer-bottom {
 
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media screen and (max-width:480px){
+
+.footer{
+padding:45px 16px 25px;
 }
- 
+
+.footer-logo{
+max-width:150px;
+}
+
+.footer h4{
+font-size:.95rem;
+}
+
+.footer p,
+.footer a,
+.footer li{
+font-size:.95rem;
+}
+
+.footer-social{
+grid-template-columns:
+repeat(2,1fr);
+}
+
+.footer-social a{
+width:52px;
+height:52px;
+font-size:1.1rem;
+}
+
+.footer-bottom{
+font-size:.85rem;
+}
+
 }
