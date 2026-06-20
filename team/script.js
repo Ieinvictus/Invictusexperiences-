@@ -20,28 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ==================================================
-     MOBILE SIDEMENU
-  ================================================== */
-
   
-
-// js load nv page
-// nav bar//
-const rmBarMenuBtn = document.getElementById("rmBarMenuBtn");
-const rmBarCurtainMenu = document.getElementById("rmBarCurtainMenu");
-
-rmBarMenuBtn.addEventListener("click", () => {
-  rmBarMenuBtn.classList.toggle("active");
-  rmBarCurtainMenu.classList.toggle("active");
-});
-
-document.querySelectorAll(".rm-bar-menu-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    rmBarMenuBtn.classList.remove("active");
-    rmBarCurtainMenu.classList.remove("active");
-  });
-});
 
   /* ==================================================
      FOOTER SUBSCRIBE SYSTEM
@@ -123,4 +102,21 @@ document.querySelectorAll(".rm-bar-menu-links a").forEach((link) => {
     });
   }
 
+});
+
+// js load nv page
+// nav bar//
+const rmBarMenuBtn = document.getElementById("rmBarMenuBtn");
+const rmBarCurtainMenu = document.getElementById("rmBarCurtainMenu");
+
+rmBarMenuBtn.addEventListener("click", () => {
+  rmBarMenuBtn.classList.toggle("active");
+  rmBarCurtainMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".rm-bar-menu-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    rmBarMenuBtn.classList.remove("active");
+    rmBarCurtainMenu.classList.remove("active");
+  });
 });
