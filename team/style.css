@@ -544,7 +544,6 @@ h333{
 
 /* PARAGRAPH */
 .hero-info p{
-  font-size:clamp(14px,1.8vw,16px)!important;
   line-height:1.7;
   color:#e0e0e0;
 }
@@ -566,7 +565,6 @@ h333{
   margin-top:0;
 
   font-family:"Poppins",sans-serif;
-  font-size:clamp(14px,1.8vw,16px);
   line-height:1.75;
   letter-spacing:.2px;
 
@@ -677,7 +675,6 @@ TABLET (768 to 1050)
 }
 
 .normal-content p{
-  font-size:clmap(14px,1.8vw,16px);
   line-height:1.8;
   color:#444;
 }
@@ -823,7 +820,6 @@ margin-bottom:10px;
 
 .team-info p{
 font-family:'Inter', sans-serif;
-font-size: clamp(14px, 1.8vw, 16px);
 line-height:1.7;
 color:#444;
 max-width:90%;
