@@ -75,60 +75,82 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ==================================================
   FOOTER SUBSCRIBE SYSTEM
   ================================================== */
+/* =========================================
+FOOTER SUBSCRIBE
+========================================= */
 
-  const API = "https://invictus-zoho-api.rahulbpadaliya.workers.dev/";
+const API = "https://invictus-zoho-api.rahulbpadaliya.workers.dev";
 
-  const btn = document.querySelector(".footer-subscribe button");
-  const input = document.querySelector(".footer-subscribe input");
-  const msg = document.querySelector(".subscribe-message");
+const form = document.querySelector(".footer-subscribe");
+const input = document.querySelector(".footer-subscribe input");
+const btn = document.querySelector(".footer-subscribe button");
+const msg = document.querySelector(".subscribe-message");
 
-  if (btn && input && msg) {
+if(form && input && btn && msg){
 
-    btn.addEventListener("click", async () => {
+  form.addEventListener("submit", async function(e){
 
-      const email = input.value.trim();
+    e.preventDefault();
 
-      // Email validation
-      if (!email || !email.includes("@")) {
-        msg.innerHTML = "⚠️ Please enter a valid email";
-        return;
+    const email = input.value.trim();
+
+    if(!email || !email.includes("@")){
+      msg.innerHTML = "⚠️ Please enter a valid email address";
+      msg.style.color = "#ffb74d";
+      return;
+    }
+
+    btn.disabled = true;
+
+    msg.innerHTML =
+    '<i class="fa-solid fa-spinner fa-spin"></i> Subscribing...';
+
+    msg.style.color = "#ffeb3b";
+
+    try{
+
+      const res = await fetch(API,{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({ email })
+      });
+
+      if(res.ok){
+
+        msg.innerHTML =
+        '<i class="fa-solid fa-circle-check"></i> Successfully subscribed!';
+
+        msg.style.color = "#25D366";
+
+        input.value = "";
+
+      }else{
+
+        msg.innerHTML =
+        '<i class="fa-solid fa-circle-xmark"></i> Subscription failed.';
+
+        msg.style.color = "#ff6b6b";
       }
 
-      // Loading
-      msg.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Subscribing...';
+    }catch(error){
 
-      try {
-        const res = await fetch(API, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ email })
-        });
+      msg.innerHTML =
+      '<i class="fa-solid fa-circle-xmark"></i> Server error. Try again later.';
 
-        if (res.ok) {
-          msg.innerHTML = '<i class="fa-solid fa-campground"></i> You\'re in! Get ready for exciting treks and adventure updates.';
-          input.value = "";
-        } else {
-          msg.innerHTML = "❌ Subscription failed. Try again.";
-        }
+      msg.style.color = "#ff6b6b";
+    }
 
-      } catch (error) {
-        msg.innerHTML = "❌ Server error. Try later.";
-      }
+    btn.disabled = false;
 
-    });
+    setTimeout(()=>{
+      msg.innerHTML = "";
+    },6000);
 
-    // ENTER KEY SUPPORT 🔥
-    input.addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        btn.click();
-      }
-    });
+  });
 
-  }
-
-});
+}
 
 // nv var droptdown//
 /* ===============================
