@@ -1327,7 +1327,7 @@ display:visible;
 
 .review-top strong{
 
-font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem)!important;
   font-weight: 600;
   line-height: 1.4;
 color:#222;
@@ -1336,7 +1336,7 @@ color:#222;
 
 .review-top span{
   display:block;
-  font-size:16px;
+  font-size:16px!important;
   color:#777;
   letter-spacing:0.5px;
   margin-top:3px;
