@@ -8,11 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   body.dataset.animation = "bodyCurtainOpen";
 
   Object.assign(body.style, {
-    transformOrigin: "center",
-    transform: "scaleX(0)",
-    willChange: "transform",
-    overflowX: "hidden"
-  });
+  overflowX: "hidden"
+});
 
   const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
   const start = performance.now();
