@@ -24,119 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
      MOBILE SIDEMENU
   ================================================== */
 
-  const menuToggle = document.querySelector(".menu-toggle");
-  const sideMenu = document.getElementById("sideMenu");
-  const closeBtn = document.querySelector(".close-btnx");
+  
 
-  if (menuToggle && sideMenu) {
+// js load nv page
+// nav bar//
+const rmBarMenuBtn = document.getElementById("rmBarMenuBtn");
+const rmBarCurtainMenu = document.getElementById("rmBarCurtainMenu");
 
-    menuToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      sideMenu.classList.toggle("open");
-    });
+rmBarMenuBtn.addEventListener("click", () => {
+  rmBarMenuBtn.classList.toggle("active");
+  rmBarCurtainMenu.classList.toggle("active");
+});
 
-    if (closeBtn) {
-      closeBtn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        sideMenu.classList.remove("open");
-      });
-    }
-
-    sideMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        sideMenu.classList.remove("open");
-      });
-    });
-
-    document.addEventListener("click", (e) => {
-      if (
-        sideMenu.classList.contains("open") &&
-        !sideMenu.contains(e.target) &&
-        !menuToggle.contains(e.target)
-      ) {
-        sideMenu.classList.remove("open");
-      }
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        sideMenu.classList.remove("open");
-      }
-    });
-  }
-
-  /* ==================================================
-     NAVBAR DROPDOWN SYSTEM
-  ================================================== */
-
-  const mobileMenu = document.getElementById("mobileMenu");
-  const navToggle = document.querySelector(".nav-toggle");
-  const dropdowns = document.querySelectorAll(".dropdown");
-
-  window.toggleMenu = function () {
-
-    if (!mobileMenu) return;
-
-    mobileMenu.classList.toggle("active");
-
-    document.body.style.overflow =
-      mobileMenu.classList.contains("active")
-        ? "hidden"
-        : "auto";
-  };
-
-  document.querySelectorAll(".dropdown-toggle").forEach(item => {
-
-    item.addEventListener("click", function (e) {
-
-      e.preventDefault();
-
-      dropdowns.forEach(drop => {
-        if (drop !== this.parentElement) {
-          drop.classList.remove("active");
-        }
-      });
-
-      this.parentElement.classList.toggle("active");
-    });
+document.querySelectorAll(".rm-bar-menu-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    rmBarMenuBtn.classList.remove("active");
+    rmBarCurtainMenu.classList.remove("active");
   });
-
-  document.addEventListener("click", function (e) {
-
-    dropdowns.forEach(drop => {
-      if (!drop.contains(e.target)) {
-        drop.classList.remove("active");
-      }
-    });
-
-    if (
-      mobileMenu &&
-      mobileMenu.classList.contains("active") &&
-      mobileMenu.querySelector(".mobile-menu-box") &&
-      !mobileMenu.querySelector(".mobile-menu-box").contains(e.target) &&
-      navToggle &&
-      !navToggle.contains(e.target)
-    ) {
-      toggleMenu();
-    }
-  });
-
-  document.addEventListener("keydown", function (e) {
-
-    if (e.key === "Escape") {
-
-      dropdowns.forEach(drop => {
-        drop.classList.remove("active");
-      });
-
-      if (
-        mobileMenu &&
-        mobileMenu.classList.contains("active")
-      ) {
-        toggleMenu();
-      }
-    }
-  });
+});
 
   /* ==================================================
      FOOTER SUBSCRIBE SYSTEM
