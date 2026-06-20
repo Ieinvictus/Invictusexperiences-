@@ -161,6 +161,7 @@ window.addEventListener("scroll", () => {
 
 
 
+// js load nv page
 // nav bar//
 const rmBarMenuBtn = document.getElementById("rmBarMenuBtn");
 const rmBarCurtainMenu = document.getElementById("rmBarCurtainMenu");
