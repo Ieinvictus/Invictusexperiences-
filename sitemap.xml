@@ -29,6 +29,10 @@
   </url>  <url>
     <loc>https://invictusexperiences.com/terms/</loc>
     <priority>0.5</priority>
-    
+
+    <url>
+  <loc>https://invictusexperiences.com/kedarnath-trek/</loc>
+  <priority>0.9</priority>
+</url>
     
   </url></urlset>
