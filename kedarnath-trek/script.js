@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      ===== HOME PAGE EFFECT ===
      ========================= */
-  const duration = 1500;
+  const duration = 0;
   body.dataset.animation = "bodyCurtainOpen";
 
   Object.assign(body.style, {
