@@ -481,7 +481,7 @@ width: 100%;
 
 /* PARAGRAPH */
 .conflict-content p {
-  font-size: clamp(14px, 1.6vw, 16px); /* 🔥 fixed */
+  color:#fff;
   line-height: 1.6;
   opacity: 0.9;
   max-width: 600px;
@@ -580,7 +580,7 @@ PARAGRAPH
 ========================= */
 
   .conflict-content p {
-    font-size: 14px;
+    color:#fff;
     line-height: 1.6;
     opacity: 0.9;
   }
