@@ -467,10 +467,9 @@ HERO SECTION
 }
 
 .inv-hero-desc p {
-  font-size: clamp(14px, 2vw, 18px);
   line-height: 1.8;
   opacity: 0.9;
-  color: #fff !important;
+  color:#fff!important;
   margin-bottom: 40px;
 }
 
@@ -531,7 +530,6 @@ OVERLAP CARD
 }
 
 .inv-about-card p {
-  font-size: clamp(12px, 1.8vw, 16px);
   padding: 0 20px;
   line-height: 1.9;
   color: #fff;
@@ -618,7 +616,7 @@ OVERLAP CARD
     font-size: 14px;
 
     line-height: 1.6;
-
+color:#fff;
     margin-bottom: 20px;
   }
   .inv-hero-overlay {
