@@ -471,7 +471,7 @@ h333{
 
 /* PARAGRAPH */
 .conflict-content p {
-  color:#fff;
+  color:#fff!important;
   line-height: 1.6;
   opacity: 0.9;
   max-width: 600px;
@@ -570,7 +570,7 @@ PARAGRAPH
 ========================= */
 
   .conflict-content p {
-  color:#fff;
+  color:#fff!important;
     line-height: 1.6;
     opacity: 0.9;
   }
