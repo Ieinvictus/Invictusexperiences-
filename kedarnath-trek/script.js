@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   body.dataset.animation = "bodyCurtainOpen";
 
   Object.assign(body.style, {
+  transformOrigin: "",
+  transform: "",
+  willChange: "",
   overflowX: "hidden"
 });
 
