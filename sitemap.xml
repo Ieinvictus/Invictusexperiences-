@@ -1,34 +1,53 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">  <!-- Home -->  <url>
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+    <!-- Home -->  
+    <url>
     <loc>https://invictusexperiences.com/</loc>
     <priority>1.0</priority>
-  </url>  <!-- Main Pages -->  <url>
+  </url> 
+    <!-- Main Pages --> 
+    <url>
     <loc>https://invictusexperiences.com/about/</loc>
     <priority>0.9</priority>
-  </url>  <url>
+  </url>  
+    <url>
     <loc>https://invictusexperiences.com/events/</loc>
     <priority>0.9</priority>
-  </url>  <url>
+  </url>  
+    <url>
     <loc>https://invictusexperiences.com/team/</loc>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>  
+    <url>
     <loc>https://invictusexperiences.com/contact/</loc>
     <priority>0.7</priority>
-  </url>  <!-- Info Pages -->  <url>
+  </url>  
+    <!-- Info Pages -->  
+    <url>
     <loc>https://invictusexperiences.com/ethos/</loc>
     <priority>0.7</priority>
-  </url>  <url>
+  </url>  
+    <url>
     <loc>https://invictusexperiences.com/why-explore/</loc>
     <priority>0.8</priority>
-  </url>  <url>
+  </url>  
+    <url>
     <loc>https://invictusexperiences.com/faq/</loc>
     <priority>0.6</priority>
-  </url>  <!-- Legal Pages -->  <url>
+  </url>  
+    <!-- Legal Pages --> 
+    <url>
     <loc>https://invictusexperiences.com/privacy-policy/</loc>
     <priority>0.5</priority>
-  </url>  <url>
+  </url>  
+    <url>
     <loc>https://invictusexperiences.com/terms/</loc>
     <priority>0.5</priority>
-  </url>  <!-- Trek Pages -->  <url>
-    <loc>https://invictusexperiences.com/kedarnath-trek/</loc>
-    <priority>0.9</priority>
-  </url></urlset>
+    </url>
+        
+  <!-- Trek Pages -->
+<url>
+  <loc>https://invictusexperiences.com/kedarnath-trek/</loc>
+  <priority>0.9</priority>
+</url>
+
+</urlset>
