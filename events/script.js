@@ -21,72 +21,20 @@ document.querySelectorAll(".slider").forEach((slider) => {
   }, 4000);
 });
 
-//nvbar//
-/* ==================================================
-   NAVIGATION SYSTEM
-================================================== */
+// js load nv page
+// nav bar//
+const rmBarMenuBtn = document.getElementById("rmBarMenuBtn");
+const rmBarCurtainMenu = document.getElementById("rmBarCurtainMenu");
 
-const mobileMenu = document.getElementById("mobileMenu");
-const navToggle = document.querySelector(".nav-toggle");
-const dropdowns = document.querySelectorAll(".dropdown");
-
-/* ================= MOBILE MENU TOGGLE ================= */
-window.toggleMenu = function () {
-  if (!mobileMenu) return;
-
-  mobileMenu.classList.toggle("active");
-
-  // Body scroll lock
-  if (mobileMenu.classList.contains("active")) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
-};
-
-/* ================= CLOSE DROPDOWN ON OUTSIDE CLICK ================= */
-document.addEventListener("click", (e) => {
-  dropdowns.forEach((drop) => {
-    if (!drop.contains(e.target)) {
-      drop.classList.remove("active");
-    }
-  });
+rmBarMenuBtn.addEventListener("click", () => {
+  rmBarMenuBtn.classList.toggle("active");
+  rmBarCurtainMenu.classList.toggle("active");
 });
 
-/* ================= ESC KEY CLOSE ================= */
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    // Close dropdowns
-    dropdowns.forEach((drop) => drop.classList.remove("active"));
-
-    // Close mobile menu
-    if (mobileMenu && mobileMenu.classList.contains("active")) {
-      window.toggleMenu();
-    }
-  }
-});
-
-/* ==================================================
-   DROPDOWN CLICK SYSTEM
-================================================== */
-
-const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
-dropdownToggles.forEach((toggle) => {
-  toggle.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const parent = this.parentElement;
-
-    // Close other dropdowns
-    document.querySelectorAll(".dropdown").forEach((d) => {
-      if (d !== parent) {
-        d.classList.remove("active");
-      }
-    });
-
-    // Toggle current dropdown
-    parent.classList.toggle("active");
+document.querySelectorAll(".rm-bar-menu-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    rmBarMenuBtn.classList.remove("active");
+    rmBarCurtainMenu.classList.remove("active");
   });
 });
 /* ===============================
