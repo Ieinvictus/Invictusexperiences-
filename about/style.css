@@ -471,7 +471,6 @@ z-index:2;
 }
 
 .inv-hero-desc p {
-  font-size:clamp(14px,2vw,18px);
   line-height:1.8;
   opacity:.9;
   color:#fff!important;
