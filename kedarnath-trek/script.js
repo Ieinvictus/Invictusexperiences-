@@ -1,37 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
-  const duration = 1500;
-  body.dataset.animation = "bodyCurtainOpen";
+  /* =========================
+     ===== PAGE ANIMATION OFF =
+     ========================= */
 
-  Object.assign(body.style, {
-    transformOrigin: "center",
-    transform: "scaleX(0)",
-    willChange: "transform",
-    overflowX: "hidden"
-  });
+  /* =========================
+     ===== CURRENT YEAR ======
+     ========================= */
+  const yearEl = document.getElementById("currentYear");
 
-  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-  const start = performance.now();
-
-  function animate(time) {
-    const progress = Math.min((time - start) / duration, 1);
-    body.style.transform = `scaleX(${easeOutCubic(progress)})`;
-
-    if (progress < 1) {
-      requestAnimationFrame(animate);
-    } else {
-      body.style.transform = "scaleX(1)";
-      requestAnimationFrame(() => {
-        body.style.transform = "";
-        body.style.transformOrigin = "";
-        body.style.willChange = "";
-        delete body.dataset.animation;
-      });
-    }
+  if (yearEl) {
+    yearEl.textContent = `Calendar - ${new Date().getFullYear()}`;
   }
 
-  requestAnimationFrame(() => requestAnimationFrame(animate));
 });
   /* =========================
      ===== SLIDER + SWIPE ====
