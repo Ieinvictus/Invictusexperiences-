@@ -1,50 +1,21 @@
-/* ==================================================
-NAVIGATION SYSTEM
-================================================== */
-const mobileMenu = document.getElementById("mobileMenu");
-const navToggle = document.querySelector(".nav-toggle");
-const dropdowns = document.querySelectorAll(".dropdown");
+const rmBarMenuBtn = document.getElementById("rmBarMenuBtn");
+const rmBarCurtainMenu = document.getElementById("rmBarCurtainMenu");
 
-window.toggleMenu = function () {
-  if (!mobileMenu) return;
-  mobileMenu.classList.toggle("active");
-  document.body.style.overflow = mobileMenu.classList.contains("active")
-    ? "hidden"
-    : "auto";
-};
+if (rmBarMenuBtn && rmBarCurtainMenu) {
 
-document.querySelectorAll(".dropdown-toggle").forEach((item) => {
-  item.addEventListener("click", function (e) {
-    e.preventDefault();
-    dropdowns.forEach((drop) => {
-      if (drop !== this.parentElement) drop.classList.remove("active");
+  rmBarMenuBtn.addEventListener("click", () => {
+    rmBarMenuBtn.classList.toggle("active");
+    rmBarCurtainMenu.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".rm-bar-menu-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      rmBarMenuBtn.classList.remove("active");
+      rmBarCurtainMenu.classList.remove("active");
     });
-    this.parentElement.classList.toggle("active");
-  });
-});
-
-document.addEventListener("click", function (e) {
-  dropdowns.forEach((drop) => {
-    if (!drop.contains(e.target)) drop.classList.remove("active");
   });
 
-  if (
-    mobileMenu &&
-    mobileMenu.classList.contains("active") &&
-    !mobileMenu.contains(e.target) &&
-    navToggle &&
-    !navToggle.contains(e.target)
-  ) {
-    toggleMenu();
-  }
-});
-
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") {
-    dropdowns.forEach((drop) => drop.classList.remove("active"));
-    if (mobileMenu && mobileMenu.classList.contains("active")) toggleMenu();
-  }
-});
+}
 //faqs 
 
 document.querySelectorAll(".faq-question").forEach(button=>{
