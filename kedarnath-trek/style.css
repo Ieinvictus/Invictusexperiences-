@@ -17,7 +17,7 @@ html {
 
 body,
 html {
-  width: 100%;
+  width:100%;
   min-height:100vh;
   overflow-x: hidden;
   background: #f7f5f0;
@@ -53,7 +53,7 @@ TYPOGRAPHY AUTO SCALE
 
 p {
   font-family: "Inter", "Poppins", sans-serif!important;
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem)!important;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   font-weight: 400!important;
   line-height: 1.8!important;
   letter-spacing: 0.01em!important;
