@@ -401,7 +401,7 @@ h333{
 /* ===== BANNER 1 & 2 ===== */
 .bg-section{
   position:relative;
-  height:100vh;
+  height:110vh;
   width:100%;
   background-size:cover;
   background-position:center;
@@ -412,7 +412,7 @@ h333{
 
 .bg-section{
  height:auto;
-  min-height:115dvh; /* 🔥 vh ni jagyae dvh */
+  min-height:113dvh; /* 🔥 vh ni jagyae dvh */
 }
 
 }
