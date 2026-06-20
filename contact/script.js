@@ -160,24 +160,6 @@ window.addEventListener("scroll", () => {
 });
 
 
-
-// js load nv page
-// nav bar//
-const rmBarMenuBtn = document.getElementById("rmBarMenuBtn");
-const rmBarCurtainMenu = document.getElementById("rmBarCurtainMenu");
-
-rmBarMenuBtn.addEventListener("click", () => {
-  rmBarMenuBtn.classList.toggle("active");
-  rmBarCurtainMenu.classList.toggle("active");
-});
-
-document.querySelectorAll(".rm-bar-menu-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    rmBarMenuBtn.classList.remove("active");
-    rmBarCurtainMenu.classList.remove("active");
-  });
-});
-
 //toagfal
 document.querySelectorAll(".review-text-wrap").forEach(function(wrap){
 
@@ -280,3 +262,126 @@ if(form && input && btn && msg){
   });
 
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ==================================================
+     READ MORE TOGGLE
+  ================================================== */
+
+  const buttons = document.querySelectorAll(".read-btn");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", function () {
+
+      const infoBox = this.closest(".hero-info");
+      if (!infoBox) return;
+
+      infoBox.classList.toggle("open");
+
+      this.textContent = infoBox.classList.contains("open")
+        ? "Read Less"
+        : "Read More";
+    });
+  });
+
+  
+
+  /* ==================================================
+     FOOTER SUBSCRIBE SYSTEM
+  ================================================== */
+
+  const API =
+    "https://invictus-zoho-api.rahulbpadaliya.workers.dev";
+
+  const form = document.querySelector(".footer-subscribe");
+  const input = document.querySelector(".footer-subscribe input");
+  const btn = document.querySelector(".footer-subscribe button");
+  const msg = document.querySelector(".subscribe-message");
+
+  if (form && input && btn && msg) {
+
+    form.addEventListener("submit", async function (e) {
+
+      e.preventDefault();
+
+      const email = input.value.trim();
+
+      if (!email || !email.includes("@")) {
+
+        msg.innerHTML =
+          "⚠️ Please enter a valid email address";
+
+        msg.style.color = "#ffb74d";
+
+        return;
+      }
+
+      btn.disabled = true;
+
+      msg.innerHTML =
+        '<i class="fa-solid fa-spinner fa-spin"></i> Subscribing...';
+
+      msg.style.color = "#ffeb3b";
+
+      try {
+
+        const res = await fetch(API, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email })
+        });
+
+        if (res.ok) {
+
+          msg.innerHTML =
+            '<i class="fa-solid fa-circle-check"></i> Successfully subscribed!';
+
+          msg.style.color = "#25D366";
+
+          input.value = "";
+
+        } else {
+
+          msg.innerHTML =
+            '<i class="fa-solid fa-circle-xmark"></i> Subscription failed.';
+
+          msg.style.color = "#ff6b6b";
+        }
+
+      } catch (error) {
+
+        msg.innerHTML =
+          '<i class="fa-solid fa-circle-xmark"></i> Server error. Try again later.';
+
+        msg.style.color = "#ff6b6b";
+      }
+
+      btn.disabled = false;
+
+      setTimeout(() => {
+        msg.innerHTML = "";
+      }, 6000);
+    });
+  }
+
+});
+
+// js load nv page
+// nav bar//
+const rmBarMenuBtn = document.getElementById("rmBarMenuBtn");
+const rmBarCurtainMenu = document.getElementById("rmBarCurtainMenu");
+
+rmBarMenuBtn.addEventListener("click", () => {
+  rmBarMenuBtn.classList.toggle("active");
+  rmBarCurtainMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".rm-bar-menu-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    rmBarMenuBtn.classList.remove("active");
+    rmBarCurtainMenu.classList.remove("active");
+  });
+});
