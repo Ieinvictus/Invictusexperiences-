@@ -1,43 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   return;
-});
-  /* =========================
-     ===== CURRENT YEAR ======
-     ========================= */
-  const yearEl = document.getElementById("currentYear");
-  if (yearEl) yearEl.textContent = `Calendar - ${new Date().getFullYear()}`;
-
-  /* =========================
-     ===== SIDE MENU =========
-     ========================= */
-  const menuToggle = document.querySelector("#menu-toggle, .menu-toggle");
-  const sideMenu = document.querySelector("#side-menu, #sideMenu");
-  const closeBtn = document.querySelector("#close-btn, .close-btnx");
-
-  if (menuToggle && sideMenu) {
-    menuToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      sideMenu.classList.toggle("open");
-    });
-
-    closeBtn?.addEventListener("click", () =>
-      sideMenu.classList.remove("open")
-    );
-
-    document.addEventListener("click", (e) => {
-      if (
-        sideMenu.classList.contains("open") &&
-        !sideMenu.contains(e.target) &&
-        !menuToggle.contains(e.target)
-      ) {
-        sideMenu.classList.remove("open");
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") sideMenu.classList.remove("open");
-    });
-  }
 
   /* =========================
      ===== SLIDER + SWIPE ====
