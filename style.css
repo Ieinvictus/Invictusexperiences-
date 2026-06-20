@@ -419,7 +419,7 @@ SLIDE
 
 .purple-slide{
 min-width: 100%;
-  aspect-ratio: 16 / 6;   /* 🔥 PERFECT HORIZONTAL */
+  height:500px;
   position: relative;
   overflow: hidden;
   width:100%;
