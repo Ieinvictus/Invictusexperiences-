@@ -2,19 +2,45 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
   /* =========================
-     ===== PAGE ANIMATION OFF =
+     ===== HOME PAGE EFFECT ===
      ========================= */
+  const duration = 1500;
+  body.dataset.animation = "bodyCurtainOpen";
+
+  Object.assign(body.style, {
+    transformOrigin: "center",
+    transform: "scaleX(0)",
+    willChange: "transform",
+    overflowX: "hidden"
+  });
+
+  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+  const start = performance.now();
+
+  function animate(time) {
+    const progress = Math.min((time - start) / duration, 1);
+    body.style.transform = `scaleX(${easeOutCubic(progress)})`;
+
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    } else {
+      body.style.transform = "scaleX(1)";
+      requestAnimationFrame(() => {
+        body.style.transform = "";
+        body.style.transformOrigin = "";
+        body.style.willChange = "";
+        delete body.dataset.animation;
+      });
+    }
+  }
+  requestAnimationFrame(() => requestAnimationFrame(animate));
 
   /* =========================
      ===== CURRENT YEAR ======
      ========================= */
   const yearEl = document.getElementById("currentYear");
-
-  if (yearEl) {
-    yearEl.textContent = `Calendar - ${new Date().getFullYear()}`;
-  }
-
-});
+  if (yearEl) yearEl.textContent = `Calendar - ${new Date().getFullYear()}`;
+  
   /* =========================
      ===== SLIDER + SWIPE ====
      ========================= */
