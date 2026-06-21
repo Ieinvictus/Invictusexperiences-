@@ -21,68 +21,80 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      ===== SLIDER + SWIPE ====
      ========================= */
-  (() => {
-    const slider = document.querySelector(".slider");
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
-    if (!slider || slides.length === 0) return;
+  /* =========================
+PERFECT FULL WIDTH SLIDER
+========================= */
 
-    let index = 1;
-    let auto;
-    const interval = 4000;
+(() => {
 
-    const first = slides[0].cloneNode(true);
-    const last = slides[slides.length - 1].cloneNode(true);
-    slider.appendChild(first);
-    slider.insertBefore(last, slides[0]);
+const slider = document.querySelector(".slider");
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
 
-    const all = slider.querySelectorAll(".slide");
-    const total = all.length;
+if (!slider || slides.length === 0) return;
 
-    slider.style.width = `${total * 100}%`;
-    all.forEach((s) => (s.style.width = `${100 / total}%`));
+let current = 0;
+let auto;
 
-    function go(i, animate = true) {
-      slider.style.transition = animate ? "transform .6s ease" : "none";
-      slider.style.transform = `translateX(-${i * (100 / total)}%)`;
-      index = i;
+function showSlide(index){
 
-      dots.forEach((d) => d.classList.remove("active"));
-      dots[(i - 1 + dots.length) % dots.length]?.classList.add("active");
-    }
+if(index >= slides.length) index = 0;
+if(index < 0) index = slides.length - 1;
 
-    slider.addEventListener("transitionend", () => {
-      if (all[index].classList.contains("clone")) {
-        if (index === 0) go(total - 2, false);
-        if (index === total - 1) go(1, false);
-      }
-    });
+current = index;
 
-    dots.forEach((dot, i) =>
-      dot.addEventListener("click", () => {
-        clearInterval(auto);
-        go(i + 1);
-        auto = setInterval(() => go(index + 1), interval);
-      })
-    );
+slider.style.transform =
+  `translateX(-${current * 100}%)`;
 
-    let startX = 0;
-    slider.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-      clearInterval(auto);
-    });
+dots.forEach(dot => dot.classList.remove("active"));
+dots[current]?.classList.add("active");
 
-    slider.addEventListener("touchend", (e) => {
-      const diff = e.changedTouches[0].clientX - startX;
-      if (diff > 50) go(index - 1);
-      else if (diff < -50) go(index + 1);
-      auto = setInterval(() => go(index + 1), interval);
-    });
+}
 
-    go(index, false);
-    auto = setInterval(() => go(index + 1), interval);
-  })();
+function nextSlide(){
+showSlide(current + 1);
+}
 
+function startAuto(){
+clearInterval(auto);
+auto = setInterval(nextSlide, 5000);
+}
+
+dots.forEach((dot,i)=>{
+dot.addEventListener("click",()=>{
+showSlide(i);
+startAuto();
+});
+});
+
+let startX = 0;
+
+slider.addEventListener("touchstart",(e)=>{
+startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend",(e)=>{
+
+const diff =
+  e.changedTouches[0].clientX - startX;
+
+if(diff > 60){
+  showSlide(current - 1);
+}
+
+if(diff < -60){
+  showSlide(current + 1);
+}
+
+startAuto();
+
+});
+
+showSlide(0);
+startAuto();
+
+})();
+  
   /* =========================
      ===== CALENDAR DATES ====
      ========================= */
