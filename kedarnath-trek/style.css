@@ -568,8 +568,6 @@ MOBILE
 
 .slider-container{
 height:100vh;
-max-height:600px;
-min-height:500px;
 }
 
 .slide img{
@@ -597,7 +595,7 @@ font-size:11px;
 
 .dot-container{
 left:50%;
-bottom:18px;
+bottom:35px;
 transform:translateX(-50%);
 
 gap:8px;
@@ -631,7 +629,7 @@ SMALL MOBILE
 @media (max-width:480px){
 
 .slider-container{
-max-height:550px;
+max-height:100vh;
 }
 
 .dot{
@@ -641,6 +639,7 @@ height:5px;
 
 .dot-container{
 gap:6px;
+  bottom:70px;
 }
 
 }
