@@ -396,185 +396,253 @@ h333{
 }
 
 /* ================= SLIDER CONTAINER ================= */
-.slider-container {
-  position: relative;
-  flex-grow: 1;
-  width: 100%;
-  background: #000;
-  flex-shrink: 0;
-  height:clamp(700px,45vh,750px);
-  max-width: 100%;
-  overflow: hidden;
-  border-radius: 0;
-}
-/* ================= SLIDER WRAPPER ================= */
-.slider {
-display: flex;
-width: 100%;
-height: 100%;
-transition: transform 1s ease-in-out;
+/* =========================
+SLIDER CONTAINER
+========================= */
+
+.slider-container{
+position:relative;
+width:100%;
+height: clamp(450px, 55vh, 650px);
+overflow:hidden;
+background:#000;
 }
 
-/* ================= SLIDE ================= */
-.slide {
-position: relative;
-flex-shrink: 0;
-width: 100%;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
+/* =========================
+SLIDER WRAPPER
+========================= */
+
+.slider{
+display:flex;
+height:100%;
+transition:transform .8s cubic-bezier(.4,0,.2,1);
+will-change:transform;
 }
 
-.slide img {
-width: 100%;
-height: 100%;
-object-fit: cover;
+/* =========================
+SLIDE
+========================= */
+
+.slide{
+position:relative;
+flex:0 0 100%;
+width:100%;
+height:100%;
+overflow:hidden;
 }
 
-/* ================= TEXT BOX ================= */
-.slide-text-box {
-position: absolute;
-top: 50%;
-left: 20%;
-display: none;
-transform: translate(-50%, -50%);
-background: rgba(0, 0, 0, 0.55);
-padding: 2vw;
-width: 40vw;
-max-width: 400px;
-color: #fff;
-font-size: 1.5vw;
-font-weight: bold;
-border-radius: 10px;
-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
-text-align: center;
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center;
+display:block;
+backface-visibility:hidden;
+transform:translateZ(0);
 }
 
-/* ================= DOTS ================= */
-.dot-container {
-position: absolute;
-bottom: 2vh;
-left: 50%;
-transform: translateX(-50%);
-display: flex;
-gap: 1vw;
-background: rgba(0, 0, 0, 0.6);
-padding: 0.8vw 1.2vw;
-border-radius: 15px;
-}
+/* =========================
+TEXT BOX
+========================= */
 
-.dot {
-width: 1vw;
-height: 1vw;
-background-color: #fff;
-border-radius: 50%;
-opacity: 0.5;
-cursor: pointer;
-transition: opacity 0.3s, transform 0.3s;
-}
-
-.dot.active {
-opacity: 1;
-transform: scale(1.2);
-background-color: #fff;
-}
-
-/* ================= COMPANY NAME ================= */
-.company-name {
-position: absolute;
-bottom: 15%;
-left: 8%;
-display: none;
-font-size: 18px;
-font-weight: bold;
-color: #fff;
-font-family: "Poppins", sans-serif;
-letter-spacing: 2px;
-background: rgba(0, 0, 0, 0.55); /* overlay background */
-padding: 6px 12px;
-border-radius: 6px;
-text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-}
-
-/* ================= SUBTEXT ================= */
-.custom-subtext {
-position: absolute;
-bottom: 10%;
-left: 8%;
-display: none;
-font-size: 16px;
-font-weight: bold;
-color: rgba(255, 255, 255, 0.85);
-font-family: "Poppins", sans-serif;
-letter-spacing: 1px;
-background: rgba(0, 0, 0, 0.5); /* overlay background */
-padding: 4px 10px;
-border-radius: 5px;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-.slider-container {
-    min-height:100vh;
-  max-height:600px;
-  position:relative;
-  
-}
-  .slide img{
-        width:100%;
-        height:100%;
-        object-fit:cover;
-        object-position:center;
-    }
-
-.slide-text-box {
-font-size: 12px;
-
-width: 60vw;
-}
-
-.company-name {
-font-size: 12px; /* smaller font */
-left: 5%; /* left side */
-bottom: 90px;
-text-align: left;
-}
-
-.custom-subtext {
-font-size: 12px;
-left: 5%;
-bottom: 40px;
-text-align: left;
-}
-
-.dot-container {
+.slide-text-box{
 position:absolute;
+top:50%;
+left:20%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,.55);
+color:#fff;
+padding:20px;
+width:min(400px,40vw);
+border-radius:12px;
+font-size:clamp(14px,1.5vw,24px);
+font-weight:700;
+text-align:center;
+box-shadow:0 8px 30px rgba(0,0,0,.35);
 
-    left:60px;
-bottom:70px;
-background:rgba(0,0,0,.25);
+display:none;
+}
+
+/* =========================
+COMPANY NAME
+========================= */
+
+.company-name{
+position:absolute;
+bottom:90px;
+left:40px;
+
+display:none;
+
+font-family:Poppins,sans-serif;
+font-size:18px;
+font-weight:700;
+color:#fff;
+
+background:rgba(0,0,0,.55);
+padding:8px 14px;
+border-radius:8px;
+
+letter-spacing:1px;
+}
+
+/* =========================
+SUBTEXT
+========================= */
+
+.custom-subtext{
+position:absolute;
+bottom:45px;
+left:40px;
+
+display:none;
+
+font-family:Poppins,sans-serif;
+font-size:15px;
+font-weight:600;
+color:rgba(255,255,255,.9);
+
+background:rgba(0,0,0,.45);
+padding:6px 12px;
+border-radius:8px;
+}
+
+/* =========================
+DOTS
+========================= */
+
+.dot-container{
+position:absolute;
+left:50%;
+bottom:25px;
+transform:translateX(-50%);
+
+display:flex;
+align-items:center;
+gap:10px;
+
+z-index:10;
+
+background:rgba(0,0,0,.45);
 backdrop-filter:blur(10px);
-border-radius:30px;
 
-        z-index:20;
+padding:8px 14px;
+border-radius:50px;
 }
 
-.dot {
-width:32px;
+.dot{
+width:12px;
+height:12px;
 
-    border-radius:30px;
+border-radius:50%;
+background:#fff;
 
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #fff
-    );
+opacity:.4;
+cursor:pointer;
 
-    box-shadow:
-        0 0 12px rgba(255,95,21,.5);
+transition:all .3s ease;
+}
+
+.dot.active{
+opacity:1;
+transform:scale(1.2);
+}
+
+/* =========================
+TABLET
+========================= */
+
+@media (max-width:1050px){
+
+.slider-container{
+height:650px;
+}
 
 }
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width:768px){
+
+.slider-container{
+height:100vh;
+max-height:600px;
+min-height:500px;
+}
+
+.slide img{
+object-fit:cover;
+object-position:center;
+}
+
+.slide-text-box{
+width:75vw;
+font-size:14px;
+padding:14px;
+}
+
+.company-name{
+left:20px;
+bottom:95px;
+font-size:12px;
+}
+
+.custom-subtext{
+left:20px;
+bottom:55px;
+font-size:11px;
+}
+
+.dot-container{
+left:50%;
+bottom:18px;
+transform:translateX(-50%);
+
+gap:8px;
+
+padding:8px 12px;
+
+background:rgba(0,0,0,.30);
+backdrop-filter:blur(12px);
+
+}
+
+.dot{
+width:28px;
+height:6px;
+border-radius:50px;
+
+opacity:.45;
+
+}
+
+.dot.active{
+opacity:1;
+transform:scale(1);
+}
+}
+
+/* =========================
+SMALL MOBILE
+========================= */
+
+@media (max-width:480px){
+
+.slider-container{
+max-height:550px;
+}
+
+.dot{
+width:24px;
+height:5px;
+}
+
+.dot-container{
+gap:6px;
+}
+
 }
 
 /* =========================
