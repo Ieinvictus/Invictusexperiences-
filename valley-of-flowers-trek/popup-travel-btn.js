@@ -1,9 +1,11 @@
-  /* =========================
-     ===== TRAVEL POPUPS =====
-     ========================= */
+document.addEventListener("DOMContentLoaded", () => {
+
+  const body = document.body;
+
   document.querySelectorAll(".travel-popup-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const popup = document.getElementById(btn.dataset.popup);
+
       if (popup) {
         popup.style.display = "flex";
         body.style.overflow = "hidden";
@@ -26,4 +28,5 @@
       }
     });
   });
+
 });
