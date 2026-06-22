@@ -1854,6 +1854,7 @@ background: linear-gradient(
 .travel-popup-content h3::before {
   content: "";
   position: absolute;
+  display:none !important;
   left: 0;
   top: 6px;
   width: 4px;
@@ -1909,8 +1910,8 @@ background: linear-gradient(
 }
 
 .travel-popup-content h3 i {
-  margin-right: 8px;
-  font-size:14px;
+  margin-right: 10px;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   color: #b18e63; /* Soft metallic line beige */
   transition: all 0.3s ease;
 
