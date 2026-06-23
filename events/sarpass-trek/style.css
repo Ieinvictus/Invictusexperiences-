@@ -2533,6 +2533,7 @@ ITINERARY IMAGE & POPUP STYLES
 .itinerary-photo {
   display: flex;
   width:100%
+    display:none;
   justify-content:left;
   padding: 14px;
 }
