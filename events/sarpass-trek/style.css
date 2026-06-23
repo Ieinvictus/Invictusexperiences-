@@ -2540,6 +2540,7 @@ ITINERARY IMAGE & POPUP STYLES
 
 .itinerary-photo img {
   width: 600px;
+  display:none;
   pointer-events:none;
   max-width: 100%;
   height:clamp(260px,320px,340px);
