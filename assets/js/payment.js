@@ -2,57 +2,63 @@
 // PAYMENT PAGE JS
 // ============================
 
-// Fetch Booking Data
-
-const bookingData =
-JSON.parse(
+const bookingData = JSON.parse(
 localStorage.getItem("bookingData")
 );
 
-// Redirect if no booking data
+// Booking data check
+if (!bookingData) {
 
-// if (!bookingData) {
-//   window.location.href =
-//   "https://invictusexperiences.com/booking/";
+console.log("No booking data found");
+
+alert("Booking information not found.");
+
+throw new Error("No bookingData in localStorage");
+
 }
-// Invoice Auto Fill
+
+// ============================
+// INVOICE AUTO FILL
+// ============================
 
 document.getElementById("invoiceBookingId").textContent =
-bookingData.bookingId;
+bookingData.bookingId || "-";
 
 document.getElementById("invoiceBookingDate").textContent =
-bookingData.bookingDate;
+bookingData.bookingDate || "-";
 
 document.getElementById("invoicePackage").textContent =
-bookingData.destinationName;
+bookingData.destinationName || "-";
 
 document.getElementById("invoiceTravelDate").textContent =
-bookingData.travelDate;
+bookingData.travelDate || "-";
 
 document.getElementById("invoiceName").textContent =
-bookingData.fullName;
+bookingData.fullName || "-";
 
 document.getElementById("invoiceMobile").textContent =
-bookingData.mobile;
+bookingData.mobile || "-";
 
 document.getElementById("invoiceEmail").textContent =
-bookingData.email;
+bookingData.email || "-";
 
 document.getElementById("invoiceTravellers").textContent =
-bookingData.travellers;
+bookingData.travellers || "1";
 
 document.getElementById("invoicePrice").textContent =
-"₹" +
-bookingData.packagePrice.toLocaleString("en-IN");
+"₹" + Number(
+bookingData.packagePrice || 0
+).toLocaleString("en-IN");
 
 document.getElementById("invoiceTotal").textContent =
-"₹" +
-bookingData.totalAmount.toLocaleString("en-IN");
+"₹" + Number(
+bookingData.totalAmount || 0
+).toLocaleString("en-IN");
 
 document.getElementById("payableAmount").textContent =
-"₹" +
-bookingData.totalAmount.toLocaleString("en-IN");
-
+"₹" + Number(
+bookingData.totalAmount || 0
+).toLocaleString("en-IN");
 
 // ============================
 // PAYMENT METHOD TOGGLE
@@ -75,8 +81,7 @@ radio.addEventListener(
 () => {
 
 if (
-radio.value === "upi" &&
-radio.checked
+radio.value === "upi"
 ) {
 
 upiSection.style.display =
@@ -88,8 +93,7 @@ bankSection.style.display =
 }
 
 if (
-radio.value === "netbanking" &&
-radio.checked
+radio.value === "netbanking"
 ) {
 
 upiSection.style.display =
@@ -104,13 +108,12 @@ bankSection.style.display =
 
 });
 
-
 // ============================
 // UPI PAYMENT
 // ============================
 
 const amount =
-bookingData.totalAmount;
+bookingData.totalAmount || 0;
 
 const upiId =
 "rahulpadaliya16@ybl";
@@ -118,18 +121,14 @@ const upiId =
 const upiLink =
 `upi://pay?pa=${upiId}&pn=Invictus%20Experiences&am=${amount}&cu=INR`;
 
-document
-.getElementById("phonepeBtn")
-.setAttribute("href", upiLink);
+document.getElementById("phonepeBtn").href =
+upiLink;
 
-document
-.getElementById("gpayBtn")
-.setAttribute("href", upiLink);
+document.getElementById("gpayBtn").href =
+upiLink;
 
-document
-.getElementById("bhimBtn")
-.setAttribute("href", upiLink);
-
+document.getElementById("bhimBtn").href =
+upiLink;
 
 // ============================
 // PAY NOW BUTTON
@@ -153,15 +152,16 @@ selectedMethod === "upi"
 window.location.href =
 upiLink;
 
+return;
+
 }
 
 if (
-selectedMethod ===
-"netbanking"
+selectedMethod === "netbanking"
 ) {
 
 alert(
-"Please transfer the amount to the Bank of Baroda account shown above and share the payment screenshot with Invictus Experiences."
+"Transfer the amount to Bank of Baroda Account and share payment screenshot with Invictus Experiences."
 );
 
 }
