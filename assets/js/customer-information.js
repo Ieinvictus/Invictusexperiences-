@@ -100,7 +100,7 @@ await response.json();
 console.log(result);
 
 window.location.href =
-"https://invictusexperiences.com/assets/style.css/payment/";
+"https://invictusexperiences.com/assets/style.css/payment";
 
 } catch(error){
 
