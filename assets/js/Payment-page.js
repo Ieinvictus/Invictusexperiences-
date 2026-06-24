@@ -2,27 +2,24 @@
 // PAYMENT PAGE JS
 // ============================
 
-// Fetch Booking Data
+// FETCH BOOKING DATA
 
 const bookingData = JSON.parse(
 localStorage.getItem("bookingData")
 );
 
 console.log(
-"Fetched:",
+"Fetched Booking Data:",
 bookingData
 );
 
-// Booking Data Check
+// CHECK BOOKING DATA
 
 if (!bookingData) {
 
 alert(
 "Booking information not found."
 );
-
-window.location.href =
-"https://invictusexperiences.com/assets/js/customer-information.js";
 
 throw new Error(
 "No bookingData found"
@@ -34,51 +31,132 @@ throw new Error(
 // INVOICE AUTO FILL
 // ============================
 
-document.getElementById("invoiceBookingId").textContent =
+document.getElementById(
+"invoiceBookingId"
+).textContent =
 bookingData.bookingId || "-";
 
-document.getElementById("invoiceBookingDate").textContent =
+document.getElementById(
+"invoiceBookingDate"
+).textContent =
 bookingData.bookingDate || "-";
 
-document.getElementById("invoicePackage").textContent =
+document.getElementById(
+"invoicePackage"
+).textContent =
 bookingData.destinationName || "-";
 
-document.getElementById("invoiceTravelDate").textContent =
+document.getElementById(
+"invoiceTravelDate"
+).textContent =
 bookingData.travelDate || "-";
 
-document.getElementById("invoiceName").textContent =
+document.getElementById(
+"invoiceName"
+).textContent =
 bookingData.fullName || "-";
 
-document.getElementById("invoiceMobile").textContent =
+document.getElementById(
+"invoiceMobile"
+).textContent =
 bookingData.mobile || "-";
 
-document.getElementById("invoiceEmail").textContent =
+document.getElementById(
+"invoiceEmail"
+).textContent =
 bookingData.email || "-";
 
-document.getElementById("invoiceTravellers").textContent =
+document.getElementById(
+"invoiceTravellers"
+).textContent =
 bookingData.travellers || "1";
 
-document.getElementById("invoicePrice").textContent =
-"₹" + Number(
+document.getElementById(
+"invoicePrice"
+).textContent =
+"₹" +
+Number(
 bookingData.packagePrice || 0
 ).toLocaleString("en-IN");
 
-document.getElementById("invoiceTotal").textContent =
-"₹" + Number(
+document.getElementById(
+"invoiceTotal"
+).textContent =
+"₹" +
+Number(
 bookingData.totalAmount || 0
 ).toLocaleString("en-IN");
 
-document.getElementById("payableAmount").textContent =
-"₹" + Number(
+document.getElementById(
+"payableAmount"
+).textContent =
+"₹" +
+Number(
 bookingData.totalAmount || 0
 ).toLocaleString("en-IN");
+
+// ============================
+// PAYMENT METHOD TOGGLE
+// ============================
+
+const upiSection =
+document.getElementById(
+"upiSection"
+);
+
+const bankSection =
+document.getElementById(
+"bankSection"
+);
+
+document
+.querySelectorAll(
+'input[name="paymentMethod"]'
+)
+.forEach(radio => {
+
+radio.addEventListener(
+"change",
+() => {
+
+if(
+radio.value === "upi"
+){
+
+upiSection.style.display =
+"block";
+
+bankSection.style.display =
+"none";
+
+}
+
+if(
+radio.value === "netbanking"
+){
+
+upiSection.style.display =
+"none";
+
+bankSection.style.display =
+"block";
+
+}
+
+}
+
+);
+
+});
 
 // ============================
 // UPI PAYMENT
 // ============================
 
 const amount =
-Number(bookingData.totalAmount || 0);
+Number(
+bookingData.totalAmount || 0
+);
 
 const upiId =
 "rahulpadaliya16@ybl";
@@ -86,40 +164,109 @@ const upiId =
 const upiLink =
 `upi://pay?pa=${upiId}&pn=Invictus%20Experiences&am=${amount}&cu=INR&tn=${bookingData.bookingId}`;
 
-document.getElementById("phonepeBtn").href =
-upiLink;
+const phonepeBtn =
+document.getElementById(
+"phonepeBtn"
+);
 
-document.getElementById("gpayBtn").href =
-upiLink;
+const gpayBtn =
+document.getElementById(
+"gpayBtn"
+);
 
-document.getElementById("bhimBtn").href =
+const bhimBtn =
+document.getElementById(
+"bhimBtn"
+);
+
+if(phonepeBtn){
+phonepeBtn.href =
 upiLink;
+}
+
+if(gpayBtn){
+gpayBtn.href =
+upiLink;
+}
+
+if(bhimBtn){
+bhimBtn.href =
+upiLink;
+}
 
 // ============================
 // PAY NOW BUTTON
 // ============================
 
-document
-.getElementById("payBtn")
-.addEventListener("click", () => {
+const payBtn =
+document.getElementById(
+"payBtn"
+);
+
+if(payBtn){
+
+payBtn.addEventListener(
+"click",
+() => {
 
 const selectedMethod =
 document.querySelector(
 'input[name="paymentMethod"]:checked'
-).value;
+);
 
-if(selectedMethod === "upi"){
+if(!selectedMethod){
 
-window.location.href = upiLink;
+alert(
+"Please select payment method."
+);
+
+return;
 
 }
 
-if(selectedMethod === "netbanking"){
+if(
+selectedMethod.value ===
+"upi"
+){
+
+window.location.href =
+upiLink;
+
+return;
+
+}
+
+if(
+selectedMethod.value ===
+"netbanking"
+){
 
 alert(
-`Transfer ₹${amount.toLocaleString("en-IN")} to the Bank of Baroda account and share the payment screenshot with Invictus Experiences.`
+`Transfer ₹${amount.toLocaleString("en-IN")} to Bank of Baroda Account and share payment screenshot with Invictus Experiences.`
 );
 
 }
 
-});
+}
+
+);
+
+}
+
+// ============================
+// DEBUG
+// ============================
+
+console.log(
+"Invoice Loaded Successfully"
+);
+
+console.log(
+"Booking ID:",
+bookingData.bookingId
+);
+
+console.log(
+"Total Amount:",
+amount
+);
