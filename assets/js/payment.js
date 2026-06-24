@@ -14,7 +14,7 @@ localStorage.getItem("bookingData")
 if (!bookingData) {
 
 window.location.href =
-"https://invictusexperiences.com/booking/";
+"https://invictusexperiences.com/customer-information/";
 
 }
 
