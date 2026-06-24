@@ -2,18 +2,31 @@
 // PAYMENT PAGE JS
 // ============================
 
+// Fetch Booking Data
+
 const bookingData = JSON.parse(
 localStorage.getItem("bookingData")
 );
 
-// Booking data check
+console.log(
+"Fetched:",
+bookingData
+);
+
+// Booking Data Check
+
 if (!bookingData) {
 
-console.log("No booking data found");
+alert(
+"Booking information not found."
+);
 
-alert("Booking information not found.");
+window.location.href =
+"https://invictusexperiences.com/assets/js/customer-information.js";
 
-throw new Error("No bookingData in localStorage");
+throw new Error(
+"No bookingData found"
+);
 
 }
 
@@ -61,65 +74,17 @@ bookingData.totalAmount || 0
 ).toLocaleString("en-IN");
 
 // ============================
-// PAYMENT METHOD TOGGLE
-// ============================
-
-const upiSection =
-document.getElementById("upiSection");
-
-const bankSection =
-document.getElementById("bankSection");
-
-document
-.querySelectorAll(
-'input[name="paymentMethod"]'
-)
-.forEach(radio => {
-
-radio.addEventListener(
-"change",
-() => {
-
-if (
-radio.value === "upi"
-) {
-
-upiSection.style.display =
-"block";
-
-bankSection.style.display =
-"none";
-
-}
-
-if (
-radio.value === "netbanking"
-) {
-
-upiSection.style.display =
-"none";
-
-bankSection.style.display =
-"block";
-
-}
-
-});
-
-});
-
-// ============================
 // UPI PAYMENT
 // ============================
 
 const amount =
-bookingData.totalAmount || 0;
+Number(bookingData.totalAmount || 0);
 
 const upiId =
 "rahulpadaliya16@ybl";
 
 const upiLink =
-`upi://pay?pa=${upiId}&pn=Invictus%20Experiences&am=${amount}&cu=INR`;
+`upi://pay?pa=${upiId}&pn=Invictus%20Experiences&am=${amount}&cu=INR&tn=${bookingData.bookingId}`;
 
 document.getElementById("phonepeBtn").href =
 upiLink;
@@ -136,32 +101,23 @@ upiLink;
 
 document
 .getElementById("payBtn")
-.addEventListener(
-"click",
-() => {
+.addEventListener("click", () => {
 
 const selectedMethod =
 document.querySelector(
 'input[name="paymentMethod"]:checked'
 ).value;
 
-if (
-selectedMethod === "upi"
-) {
+if(selectedMethod === "upi"){
 
-window.location.href =
-upiLink;
-
-return;
+window.location.href = upiLink;
 
 }
 
-if (
-selectedMethod === "netbanking"
-) {
+if(selectedMethod === "netbanking"){
 
 alert(
-"Transfer the amount to Bank of Baroda Account and share payment screenshot with Invictus Experiences."
+`Transfer ₹${amount.toLocaleString("en-IN")} to the Bank of Baroda account and share the payment screenshot with Invictus Experiences.`
 );
 
 }
