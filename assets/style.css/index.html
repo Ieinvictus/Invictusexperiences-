@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>પૈસા </title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!-- PAYMENT PAGE -->
+
+<div class="payment-container">
+
+  <div class="invoice-card">
+
+    <h2>Invoice Details</h2>
+
+    <div class="invoice-row">
+      <span>Booking ID</span>
+      <strong id="invoiceBookingId"></strong>
+    </div>
+
+    <div class="invoice-row">
+      <span>Booking Date</span>
+      <strong id="invoiceBookingDate"></strong>
+    </div>
+
+    <div class="invoice-row">
+      <span>Package Name</span>
+      <strong id="invoicePackage"></strong>
+    </div>
+
+    <div class="invoice-row">
+      <span>Travel Date</span>
+      <strong id="invoiceTravelDate"></strong>
+    </div>
+
+    <div class="invoice-row">
+      <span>Customer Name</span>
+      <strong id="invoiceName"></strong>
+    </div>
+
+    <div class="invoice-row">
+      <span>Mobile Number</span>
+      <strong id="invoiceMobile"></strong>
+    </div>
+
+    <div class="invoice-row">
+      <span>Email Address</span>
+      <strong id="invoiceEmail"></strong>
+    </div>
+
+    <div class="invoice-row">
+      <span>Total Travelers</span>
+      <strong id="invoiceTravellers"></strong>
+    </div>
+
+    <div class="invoice-row">
+      <span>Price Per Person</span>
+      <strong id="invoicePrice"></strong>
+    </div>
+
+    <div class="invoice-row total">
+      <span>Total Amount</span>
+      <strong id="invoiceTotal"></strong>
+    </div>
+
+  </div>
+
+  <div class="payment-method">
+
+<h2>Payment Method</h2>
+
+<label class="payment-option">
+<input type="radio" name="paymentMethod" value="upi" checked>
+UPI Payment
+</label>
+
+<label class="payment-option">
+<input type="radio" name="paymentMethod" value="netbanking">
+Net Banking
+</label>
+
+
+<!-- UPI SECTION -->
+
+<div id="upiSection">
+
+<h3>Select UPI App</h3>
+
+<div class="upi-grid">
+
+<a id="phonepeBtn" class="upi-app">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe">
+<span>PhonePe</span>
+</a>
+
+<a id="gpayBtn" class="upi-app">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Pay_Logo.svg" alt="Google Pay">
+<span>Google Pay</span>
+</a>
+
+<a id="bhimBtn" class="upi-app">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/BHIM.svg/512px-BHIM.svg.png" alt="BHIM">
+<span>BHIM UPI</span>
+</a>
+
+</div>
+
+</div>
+
+
+<!-- NET BANKING SECTION -->
+
+<div id="bankSection" style="display:none;">
+
+<h3>Bank Account Details</h3>
+
+<div class="invoice-row">
+<span>Bank Name</span>
+<strong>Bank of Baroda</strong>
+</div>
+
+<div class="invoice-row">
+<span>Account Number</span>
+<strong>91000100000431</strong>
+</div>
+
+<div class="invoice-row">
+<span>IFSC Code</span>
+<strong>BARB0DBKHAS</strong>
+</div>
+
+<div class="invoice-row">
+<span>Account Name</span>
+<strong>Invictus Experiences</strong>
+</div>
+
+</div>
+
+<div class="total-box">
+<h3>Total Payable</h3>
+<div id="payableAmount">₹0</div>
+</div>
+
+<button id="payBtn" class="pay-btn">
+Pay Now
+</button>
+
+  </div>
+
+  <div class="company-box">
+
+    <h3>Invictus Experiences</h3>
+
+    <p>
+     
+    </p>
+
+    <p>
+      📞 +91 98986 68984
+    </p>
+
+    <p>
+      📧 invictusexperiences@zohomail.in
+    </p>
+
+    <p>
+      🌐 www.invictusexperiences.com
+    </p>
+
+  </div>
+
+</div>
+
+<script src="https://invictusexperiences.com/assets/js/payment.js"></script>
+
+</body>
+</html>
+    
+  </body>
+  
+</html>
