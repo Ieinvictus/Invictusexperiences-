@@ -77,41 +77,6 @@ createdAt:
 new Date().toISOString()
 
 };
-const bookingData = {
-  ...
-};
-
-// SAVE BEFORE FETCH
-localStorage.setItem(
-  "bookingData",
-  JSON.stringify(bookingData)
-);
-
-try {
-
-  const response = await fetch(ZOHO_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(bookingData)
-  });
-
-  const result = await response.json();
-
-  console.log(result);
-
-  window.location.href =
-    "https://invictusexperiences.com/assets/payment/";
-
-} catch (error) {
-
-  console.error(error);
-
-  alert("Unable to submit booking.");
-
-}
-});
 
 
 // =======================
