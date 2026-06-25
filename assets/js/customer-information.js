@@ -92,6 +92,8 @@ localStorage.setItem(
   JSON.stringify(bookingData)
 );
 
+
+
 const response = await fetch(ZOHO_URL, {
   method: "POST",
   headers: {
@@ -104,23 +106,13 @@ if (!response.ok) {
   throw new Error("Failed to submit booking");
 }
 
-const result = await response.json();
+// JSON વાંચો પરંતુ બતાવો નહીં
+await response.json();
 
-console.log(result);
-
-// Redirect to payment page
-window.location.href =
-"https://invictusexperiences.com/assets/payment/";
-
-} catch (error) {
-
-  console.error(error);
-
-  alert("Unable to submit booking.");
-
-}
-
-});
+// સીધું payment page પર જાઓ
+window.location.replace(
+  "https://invictusexperiences.com/assets/payment/"
+);
 
 
 // =======================
