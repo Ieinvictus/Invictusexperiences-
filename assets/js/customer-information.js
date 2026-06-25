@@ -1,3 +1,5 @@
+
+window.alert = function () {};
 const ZOHO_URL =
 "https://invictus-zoho-api.rahulbpadaliya.workers.dev";
 
