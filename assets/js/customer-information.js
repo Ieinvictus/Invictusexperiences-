@@ -98,7 +98,7 @@ try {
   );
 
   // Go to payment page
-  window.location.href = "payment.html";
+  window.location.href = "https://invictusexperiences.com/assets/payment/";
 
 } catch (error) {
 
