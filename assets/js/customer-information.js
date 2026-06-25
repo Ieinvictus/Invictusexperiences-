@@ -77,7 +77,36 @@ createdAt:
 new Date().toISOString()
 
 };
+try {
 
+  const response = await fetch(ZOHO_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(bookingData)
+  });
+
+  const result = await response.json();
+
+  console.log("Zoho Response:", result);
+
+  // Save booking
+  localStorage.setItem(
+    "bookingData",
+    JSON.stringify(bookingData)
+  );
+
+  // Go to payment page
+  window.location.href = "payment.html";
+
+} catch (error) {
+
+  console.error(error);
+
+  alert("Unable to create booking. Please try again.");
+
+}
 
 // =======================
 // BOOKING SUMMARY
