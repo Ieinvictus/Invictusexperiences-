@@ -19,13 +19,15 @@ const packagePrice = 11999;
 const bookingData = {
 
 bookingId:
-"INV" + Date.now(),
-
+"INV-" +
+new Date().toISOString().slice(0,10).replace(/-/g,"") +
+"-" +
+Math.floor(1000 + Math.random() * 9000),
 bookingDate:
 new Date().toLocaleDateString("en-IN"),
 
 destinationId:
-"KDT001",
+"KDNT000IE",
 
 destinationName:
 "Kedarnath Trek",
@@ -65,15 +67,18 @@ document.getElementById("emergencyMobile").value,
 
 relationship:
 document.getElementById("relationship").value,
-
+  
+travelerDetails:
+document.getElementById("travelerDetails").value,
 totalAmount:
+  
 packagePrice * travellers,
-
-bookingStatus:
-"Pending Payment",
 
 paymentStatus:
 "Pending",
+
+bookingStatus:
+"Pending Payment",
 
 createdAt:
 new Date().toISOString()
