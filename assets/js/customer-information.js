@@ -78,19 +78,7 @@ new Date().toISOString()
 
 };
 
-localStorage.setItem(
-"bookingData",
-JSON.stringify(bookingData)
-);
-console.log("Saved bookingData:", bookingData);
 
-console.log(
-localStorage.getItem("bookingData")
-);
-
-alert(
-localStorage.getItem("bookingData")
-);
   
 try {
 const response = await fetch(ZOHO_URL, {
