@@ -77,41 +77,40 @@ createdAt:
 new Date().toISOString()
 
 };
+const bookingData = {
+  ...
+};
+
+// SAVE BEFORE FETCH
 localStorage.setItem(
   "bookingData",
   JSON.stringify(bookingData)
 );
 
-console.log("bookingData saved");
-
-  
 try {
-const response = await fetch(ZOHO_URL, {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(bookingData)
-});
 
-const result =
-await response.json();
+  const response = await fetch(ZOHO_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(bookingData)
+  });
 
-console.log(result);
+  const result = await response.json();
 
-window.location.href =
-"https://invictusexperiences.com/assets/payment";
+  console.log(result);
 
-} catch(error){
+  window.location.href =
+    "https://invictusexperiences.com/assets/payment/";
 
-console.error(error);
+} catch (error) {
 
-alert(
-"Unable to submit booking."
-);
+  console.error(error);
+
+  alert("Unable to submit booking.");
 
 }
-
 });
 
 
