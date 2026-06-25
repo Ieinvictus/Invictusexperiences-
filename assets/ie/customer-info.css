@@ -1,0 +1,256 @@
+/* ===== BOOKING FORM ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family: "Inter", "Poppins", sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+background:#ffff;
+padding:20px;
+color:#222;
+}
+
+#bookingForm{
+max-width:1400px;
+margin:auto;
+background:#fff;
+padding:30px;
+border-radius:24px;
+box-shadow:none;
+border:1px solid rgba(139,106,43,.15);
+}
+
+/* ===== HEADINGS ===== */
+
+#bookingForm h2{
+font-size: clamp(1.25rem, 1.05rem + .5vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.3;
+margin-top:25px;
+margin-bottom:20px;
+color:#2d2d2d;
+padding-bottom:10px;
+border-bottom:2px solid #ece7df;
+}
+
+#bookingForm h2:first-child{
+margin-top:0;
+}
+
+/* ===== FIELD ===== */
+
+.field{
+margin-bottom:18px;
+}
+
+.field label{
+display:block;
+font-size:18px;
+font-weight:600;
+margin-bottom:8px;
+color:#444;
+}
+
+.field input,
+.field select{
+width:100%;
+padding:14px 16px;
+border:1px solid #d8d2c8;
+border-radius:14px;
+font-size:16px;
+background:#fff;
+outline:none;
+transition:.3s ease;
+}
+
+/* ===== FOCUS ===== */
+
+.field input:focus,
+.field select:focus{
+border-color:#ff5f15;
+box-shadow:0 0 0 4px rgba(255,95,21,.12);
+}
+
+/* ===== READONLY ===== */
+
+.field input[readonly]{
+background:#f3f4f6;
+cursor:not-allowed;
+}
+
+/* ===== SELECT ===== */
+
+.field select{
+cursor:pointer;
+}
+
+/* ===== BUTTON ===== */
+
+.next-btn{
+width:100%;
+margin-top:20px;
+padding:16px;
+border:none;
+border-radius:16px;
+background:#e63946;
+color:#fff;
+font-size:17px;
+font-weight:700;
+cursor:pointer;
+transition:.3s ease;
+}
+
+.next-btn:hover{
+background:#000;
+transform:translateY(-2px);
+}
+
+/* ===== REQUIRED STAR ===== */
+
+label::after{
+content:"";
+}
+
+.required::after{
+content:" *";
+color:#e63946;
+}
+
+/* ===== SECTION SPACING ===== */
+
+.section{
+margin-bottom:30px;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+#bookingForm{
+padding:20px;
+border-radius:18px;
+}
+
+#bookingForm h2{
+font-size:22px;
+}
+
+.field input,
+.field select{
+padding:13px;
+font-size:15px;
+}
+
+.next-btn{
+padding:15px;
+font-size:16px;
+}
+
+}
+
+/* ===== SMALL MOBILE ===== */
+
+@media(max-width:480px){
+
+body{
+padding:12px;
+}
+
+#bookingForm{
+padding:16px;
+}
+
+#bookingForm h2{
+font-size:20px;
+}
+
+.field label{
+font-size:14px;
+}
+
+.field input,
+.field select{
+font-size:14px;
+}
+
+.next-btn{
+font-size:15px;
+}
+
+}
+.booking-summary{
+margin-top:25px;
+padding:20px;
+background:#f8f8f8;
+border-radius:16px;
+border:1px solid #e5e7eb;
+}
+
+.booking-summary h3{
+margin-bottom:15px;
+font-size:22px;
+}
+
+.summary-row{
+display:flex;
+justify-content:space-between;
+padding:10px 0;
+border-bottom:1px dashed #ddd;
+}
+
+.summary-row.total{
+font-size:20px;
+font-weight:700;
+color:#e63946;
+border-bottom:none;
+}
+.terms-box{
+margin:20px 10px;
+font-family: "Inter", "Poppins", sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+.terms-box a{
+color:#ff5f15;
+font-weight:600;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+text-decoration:none;
+}
+
+.terms-box a:hover{
+text-decoration:underline;
+}
+.field textarea{
+  width:100%;
+  min-height:140px;
+  padding:12px 14px;
+  border:1px solid #dcdcdc;
+  border-radius:10px;
+  font-size:1rem;
+  font-family:inherit;
+  resize:vertical;
+  outline:none;
+  box-sizing:border-box;
+  transition:all .3s ease;
+  background:#fff;
+}
+
+.field textarea:focus{
+  border-color:#FF5F15;
+  box-shadow:0 0 0 3px rgba(255,95,21,.15);
+}
+
+.field textarea::placeholder{
+  color:#777;
+  line-height:1.6;
+}
