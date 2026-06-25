@@ -1,0 +1,217 @@
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Customer Information | Invictus Experiences
+</title>
+
+<meta name="robots"
+content="noindex,nofollow,noarchive,nosnippet">
+
+<meta name="googlebot"
+content="noindex,nofollow">
+
+<meta name="theme-color"
+content="#FF5F15">
+
+<link rel="canonical"
+href="https://invictusexperiences.com/assets/customer-info/">
+
+<link rel="stylesheet"
+href="https://invictusexperiences.com/assets/customer-info/style.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<form id="bookingForm">
+
+  <h2>Customer Details</h2>
+
+  <div class="field">
+    <label>Full Name *</label>
+    <input type="text" id="fullName" required>
+  </div>
+
+  <div class="field">
+    <label>Mobile Number *</label>
+    <input type="tel" id="mobile" maxlength="10" required>
+  </div>
+
+  <div class="field">
+    <label>Email Address *</label>
+    <input type="email" id="email" required>
+  </div>
+
+  <div class="field">
+    <label>State *</label>
+    <input type="text" id="state" required>
+  </div>
+
+  <div class="field">
+    <label>City *</label>
+    <input type="text" id="city" required>
+  </div>
+
+  <h2>Travel Details</h2>
+
+  <div class="field">
+  <label>Destination Name *</label>
+
+  <input
+    type="text"
+    id="destination"
+    value="Kedarnath Trek"
+    readonly>
+  </div>
+  
+
+  <div class="field">
+    <label>Travel Date *</label>
+    <input type="date" id="travelDate" required>
+  </div>
+
+  <div class="field">
+    <label>Number of Travelers *</label>
+    <input type="number"
+           id="travellers"
+           min="1"
+           value="1"
+           required>
+  </div>
+  <div class="field">
+  <label>Traveler Details *</label>
+
+  <textarea
+    id="travelerDetails"
+    rows="5"
+    placeholder="Enter full name of all travelers with email.
+
+Example:
+
+Rahul Padliya - rahul@gmail.com
+Amit Patel - amit@gmail.com
+Priya Shah - priya@gmail.com"
+    required>
+  </textarea>
+  </div>
+  
+
+  <div class="field">
+    <label>Travel Type *</label>
+    <select id="travelType" required>
+      <option value="">Select Travel Type</option>
+      <option>Solo</option>
+      <option>Couple</option>
+      <option>Group</option>
+      <option>Family</option>
+    </select>
+  </div>
+
+  <h2>Emergency Contact Details</h2>
+
+  <div class="field">
+    <label>Emergency Contact Name *</label>
+    <input type="text"
+           id="emergencyName"
+           required>
+  </div>
+
+  <div class="field">
+    <label>Emergency Contact Number *</label>
+    <input type="tel"
+           id="emergencyMobile"
+           maxlength="10"
+           required>
+  </div>
+
+  <div class="field">
+    <label>Relationship *</label>
+    <select id="relationship" required>
+      <option value="">Select Relationship</option>
+      <option>Father</option>
+      <option>Mother</option>
+      <option>Brother</option>
+      <option>Sister</option>
+      <option>Husband</option>
+      <option>Wife</option>
+      <option>Son</option>
+      <option>Daughter</option>
+      <option>Friend</option>
+      <option>Guardian</option>
+    </select>
+  </div>
+  
+  <input type="hidden" id="bookingId">
+<input type="hidden" id="bookingDate">
+<input type="hidden" id="paymentStatus" value="Pending">
+<input type="hidden" id="bookingStatus" value="New Booking">
+  
+  
+
+  
+  <div class="booking-summary">
+
+    <h3>Booking Summary</h3>
+
+    <div class="summary-row">
+      <span>Package</span>
+      <strong id="summaryDestination"></strong>
+    </div>
+    
+  
+  <div class="summary-row">
+      <span>Price Per Person</span>
+      <strong id="summaryPrice"></strong>
+    </div>
+
+    <div class="summary-row">
+      <span>Total Travelers</span>
+      <strong id="summaryTravellers">1</strong>
+    </div>
+
+    <div class="summary-row total">
+      <span>Total Amount</span>
+      <strong id="summaryTotal"></strong>
+    </div>
+
+  </div>
+  
+  <button type="submit" class="next-btn">
+    Continue To Payment →
+  </button>
+<div class="terms-box">
+
+<label>
+
+<input type="checkbox"
+       id="terms"
+       required>
+
+I agree to the
+<a href="/terms-and-conditions/">
+Terms & Conditions
+</a>
+and
+<a href="/privacy-policy/">
+Privacy Policy
+</a>
+
+</label>
+
+  </div>
+  
+</form>
+<script src="https://invictusexperiences.com/assets/js/customer-information.js"></script>
