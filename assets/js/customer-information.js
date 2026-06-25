@@ -80,36 +80,44 @@ new Date().toISOString()
 
 };
 try {
+  
+// Save booking data
+localStorage.setItem(
+  "bookingData",
+  JSON.stringify(bookingData)
+);
 
-  const response = await fetch(ZOHO_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(bookingData)
-  });
+const response = await fetch(ZOHO_URL, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(bookingData)
+});
 
-  const result = await response.json();
+if (!response.ok) {
+  throw new Error("Failed to submit booking");
+}
 
-  console.log("Zoho Response:", result);
+const result = await response.json();
 
-  // Save booking
-  localStorage.setItem(
-    "bookingData",
-    JSON.stringify(bookingData)
-  );
+console.log(result);
 
-  // Go to payment page
-  window.location.href = "https://invictusexperiences.com/assets/payment/";
+// Redirect to payment page
+window.location.href =
+"https://invictusexperiences.com/assets/payment/";
 
 } catch (error) {
 
   console.error(error);
 
-  alert("Unable to create booking. Please try again.");
+  alert("Unable to submit booking.");
 
 }
 
+});
+
+}
 // =======================
 // BOOKING SUMMARY
 // =======================
