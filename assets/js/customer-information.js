@@ -1,7 +1,7 @@
 window.alert = function () {};
 
 const ZOHO_URL =
-"https://invictus-zoho-api.rahulbpadaliya.workers.dev";
+"https://tourbooking.rahulbpadaliya.workers.dev";
 
 const packagePrices = {
   "Kedarnath Trek": 11999
