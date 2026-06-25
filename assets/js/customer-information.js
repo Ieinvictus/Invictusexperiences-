@@ -77,7 +77,12 @@ createdAt:
 new Date().toISOString()
 
 };
+localStorage.setItem(
+  "bookingData",
+  JSON.stringify(bookingData)
+);
 
+console.log("bookingData saved");
 
   
 try {
