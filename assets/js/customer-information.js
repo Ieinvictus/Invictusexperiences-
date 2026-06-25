@@ -93,14 +93,12 @@ localStorage.getItem("bookingData")
 );
   
 try {
-
-const response =
-await fetch(https://invictus-zoho-api.rahulbpadaliya.workers.dev,{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify(bookingData)
+const response = await fetch(ZOHO_URL, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(bookingData)
 });
 
 const result =
