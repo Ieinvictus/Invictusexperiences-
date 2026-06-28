@@ -1,7 +1,7 @@
 window.alert = function () {};
 
 const ZOHO_URL =
-"https://zoho-api-booking.rahulbpadaliya.workers.dev/";
+"https://wild-hall-eb25.rahulbpadaliya.workers.dev/";
 
 const packagePrices = {
   "Kedarnath Trek": 11999
