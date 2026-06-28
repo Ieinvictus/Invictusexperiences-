@@ -1,7 +1,7 @@
 window.alert = function () {};
 
 const ZOHO_URL =
-"https://ancient-dream-e6b5.rahulbpadaliya.workers.dev/";
+"https://zoho-api-booking.rahulbpadaliya.workers.dev/";
 
 const packagePrices = {
   "Kedarnath Trek": 11999
